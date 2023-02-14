@@ -1,0 +1,100 @@
+.w-custom-15 {
+    width: 15%;
+}
+.w-custom-80 {
+    width: 80%;
+}
+
+@media (max-width: 968px) {
+    .wrapper_poster_home {
+        height: unset;
+        & > div:nth-child(1),
+        & > div {
+            position: relative;
+            right: 0 !important;
+            left: 0 !important;
+            height: 300px;
+            width: 100%;
+        }
+    }
+
+    .poster_shop {
+        img {
+            transition: all 0.4s ease-in-out;
+            z-index: 1;
+
+            transform: rotate(-10deg);
+            &:hover {
+                cursor: unset;
+                transform: unset;
+            }
+        }
+    }
+    .wrapper_help_home {
+        & > div {
+            div {
+                width: 90%;
+            }
+        }
+    }
+    .wrapper_about_home {
+        .detail_info_about {
+            text-align: center;
+            & > button {
+                margin: 20% auto 0 auto;
+            }
+            & > div {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .wrapper_help_home {
+        width: 100%;
+        height: unset;
+        display: flex;
+        img {
+            height: 300px;
+        }
+        &::after {
+            border-left: 100px solid black;
+            border-right: 100px solid transparent;
+            border-top: 300px solid transparent;
+        }
+        & > div {
+            height: 300px;
+            display: block;
+
+            div {
+                width: 100%;
+                z-index: 3;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                justify-content: center;
+                transform: translateY(-50%);
+                h1 {
+                    font-size: 18px;
+                    line-height: 20px;
+                    height: unset;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 18px;
+                    height: unset;
+                    text-align: center;
+                }
+                button {
+                    margin-top: 10px;
+                    height: 40px !important;
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+}

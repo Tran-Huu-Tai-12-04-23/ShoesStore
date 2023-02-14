@@ -1,0 +1,9 @@
+@media screen and (max-width: 600px) {
+    .wrapper_setting_user {
+        .icon_cart_home_header {
+            &:hover + .cart_store {
+                display: unset !important;
+            }
+        }
+    }
+}

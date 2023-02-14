@@ -1,0 +1,17 @@
+.button {
+    border: none;
+    outline: none;
+    padding: 12px;
+    background-color: transparent;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    --hover_background_color: #243763;
+
+    &:hover {
+        filter: brightness(130%);
+        cursor: pointer;
+        background-color: var(--hover_background_color) !important;
+    }
+}
