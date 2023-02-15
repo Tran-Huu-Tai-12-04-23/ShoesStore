@@ -58,7 +58,7 @@ const Button = ({
         <>
             {!to && !disable && (
                 <button
-                    className={styles.button}
+                    className={`${styles.button}`}
                     style={{
                         ...stylesCustom,
                         height: height,

@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { ThemeApp } from '../../Utils/context';
-import Button from '../../Components/Button';
+import Button from '../Button';
 import nikeAir2 from '../../assets/img/nikeAir2.png';
 import nikeMax1 from '../../assets/img/nikeMax1.png';
 
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-const ShowProduct = () => {
+const SliderProduct = () => {
     const [theme, setTheme] = useContext(ThemeApp);
     const listItems = useRef();
     const [product, setProduct] = useState([
@@ -118,4 +118,4 @@ const ShowProduct = () => {
     );
 };
 
-export default memo(ShowProduct);
+export default memo(SliderProduct);

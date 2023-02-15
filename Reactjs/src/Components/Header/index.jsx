@@ -17,15 +17,8 @@ import { FcPrevious } from 'react-icons/fc';
 import Button from '../Button';
 import InputCount from '../InputCount';
 import Menu from '../Menu';
-import ShowProduct from '../../Layout/Home/ShowProduct';
 
-const Header = ({
-    heightScroll,
-    typeProductActive = '',
-    setTypeProductActive = () => {},
-    nav,
-    setShowProductHome = () => {},
-}) => {
+const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }) => {
     const [isLogging, setIslogging] = useState(false);
     const [theme, setTheme] = useContext(ThemeApp);
 
@@ -217,7 +210,6 @@ const Header = ({
                     }}
                     onClick={(e) => {
                         setTypeProductActive(optionsSelect[key].id);
-                        setShowProductHome(true);
                     }}
                 >
                     {optionsSelect[key].name}
@@ -252,8 +244,7 @@ const Header = ({
                 style={{
                     color: theme.color,
                     background: theme.backgroundColor,
-                    borderBottom: '1px solid transparent',
-                    borderColor: heightScroll > 0 ? theme.thirdBackgroundColor : 'transparent',
+                    borderBottom: '1px outset #fff',
                 }}
             >
                 <div
@@ -269,7 +260,6 @@ const Header = ({
                         cursor: 'pointer',
                     }}
                     onClick={(e) => {
-                        setShowProductHome(false);
                         setTypeProductActive('');
                     }}
                 >

@@ -4,7 +4,9 @@
 html,
 * {
     font-family: 'roboto', 'sans-serif';
+    user-select: none;
 }
+
 body {
     overflow-x: hidden;
 

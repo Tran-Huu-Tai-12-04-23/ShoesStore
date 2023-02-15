@@ -8,21 +8,18 @@ import { ThemeApp } from '../../Utils/context';
 import ItemCart from '../../Components/ItemCart';
 import Button from '../../Components/Button';
 
-const DisplayItem = ({ data = [], width, numberProduct, dataFilter }) => {
+const DisplayItem = ({ data = [], classNameCustom, numberProduct, dataFilter }) => {
     const [theme, setTheme] = useContext(ThemeApp);
 
     const renderProducts = () => {
         return data.map((item, index) => {
             return (
                 <div
-                    className="m-1 wrapper_cart_item_main"
                     key={uuid()}
+                    className={`wrapper_cart_item_main ${classNameCustom} pt-1 pb-1`}
                     style={{
                         borderRadius: 'var(--primary_border_radius)',
-                        overflow: 'hidden',
-                        width: width,
                         display: index < numberProduct ? 'block' : 'none',
-                        height: '300px',
                     }}
                 >
                     <ItemCart
@@ -51,9 +48,10 @@ const DisplayItem = ({ data = [], width, numberProduct, dataFilter }) => {
                                     addStyleCustom={{
                                         color: theme.color,
                                         borderRadius: 'var(--primary_border_radius)',
+                                        fontSize: '14px',
                                     }}
                                     height="30px"
-                                    width="40%"
+                                    width="45%"
                                 ></Button>
                                 <Button
                                     nameButton="Add Cart"
@@ -61,9 +59,10 @@ const DisplayItem = ({ data = [], width, numberProduct, dataFilter }) => {
                                     addStyleCustom={{
                                         color: '#fff',
                                         borderRadius: 'var(--primary_border_radius)',
+                                        fontSize: '14px',
                                     }}
                                     height="30px"
-                                    width="40%"
+                                    width="45%"
                                 ></Button>
                             </div>
                         }

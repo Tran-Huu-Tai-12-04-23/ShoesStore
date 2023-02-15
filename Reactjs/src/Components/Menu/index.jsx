@@ -23,7 +23,6 @@ const Menu = ({
             className={`wrapper_menu_header ${classNameMenu}`}
             style={{
                 ...addStyle,
-                display: display ? 'block' : 'none',
                 position: position,
                 top: top,
                 left: left,
@@ -32,6 +31,7 @@ const Menu = ({
                 '--width_menu': width,
                 '--height_menu': height,
                 backgroundColor: backgroundColor,
+                display: display ? 'block' : 'none',
             }}
         >
             {children}
