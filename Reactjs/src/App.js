@@ -7,6 +7,7 @@ import Login from './Layout/Login';
 import Register from './Layout/Register';
 import ShowProduct from './Layout/DisplayProduct';
 import DetailItem from './Layout/DetailItem';
+import Store from './Layout/Store';
 import { ThemeApp } from './Utils/context';
 
 import { FcUpload } from 'react-icons/fc';
@@ -62,6 +63,7 @@ function App() {
                         <Route path="/admin" element={<Admin />}></Route>
                         <Route path="/products" element={<ShowProduct />}></Route>
                         <Route path="/detail-item" element={<DetailItem />}></Route>
+                        <Route path="/store" element={<Store />}></Route>
                         <Route path="/" element={<Home />}></Route>
                     </Routes>
                 </Router>
