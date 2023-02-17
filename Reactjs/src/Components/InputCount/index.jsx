@@ -14,7 +14,6 @@ const InputCount = ({
     width,
     height,
     addStyle = {},
-    color,
     actionNext = (e) => {},
     actionPrev = (e) => {},
     action = (e) => {},
@@ -50,7 +49,6 @@ const InputCount = ({
                             ...addStyle,
                             height: height,
                             width: width,
-                            color: color,
                         }}
                     ></input>
                     <IoIosAdd onClick={actionNext} />
@@ -64,7 +62,6 @@ const InputCount = ({
                         ...addStyle,
                         height: height,
                         width: width,
-                        color: color,
                     }}
                 >
                     {renderOptionsSelect()}

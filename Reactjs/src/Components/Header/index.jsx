@@ -348,14 +348,20 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                             }}
                             backgroundColor={theme.secondBackgroundColor}
                         >
-                            <div className="action_back" onClick={(e) => setShowCart(!showCart)}>
+                            <div
+                                className="action_back"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    e.preventDefault();
+                                    setShowCart(!showCart);
+                                }}
+                            >
                                 <FcPrevious
                                     style={{
                                         fontSize: '32px',
                                     }}
-                                    onClick={(e) => setShowCart(!showCart)}
                                 ></FcPrevious>
-                                <span onClick={(e) => setShowCart(!showCart)}>Close</span>
+                                <span>Close</span>
                             </div>
                             <div className="wrapper_store_item_cart">{renderCartStore()}</div>
                             <div className="wrapper_footer_cart_store">
@@ -390,6 +396,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                         marginTop: '12px',
                                     }}
                                     backgroundColorCustom={'#FF8B13'}
+                                    to="/store"
                                 ></Button>
                             </div>
                         </Menu>

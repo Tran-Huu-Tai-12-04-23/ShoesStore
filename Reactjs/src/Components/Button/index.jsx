@@ -9,7 +9,7 @@ const Button = ({
     action = () => {},
     nameButton = 'default',
     height = '40px',
-    width = '50%',
+    width = '40%',
     backgroundColorCustom,
     addStyleCustom = {},
     icon,
