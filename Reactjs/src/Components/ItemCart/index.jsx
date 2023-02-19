@@ -42,9 +42,9 @@ const ItemCart = ({
                 <h1>{nameItem}</h1>
                 <span
                     style={{
-                        fontSize: '12px',
+                        fontSize: '1.2rem',
                         color: '#ccc',
-                        margin: '2px 0 12px 0',
+                        margin: '.2rem 0 1.2rem 0',
                         display: 'block',
                     }}
                 >
@@ -55,7 +55,7 @@ const ItemCart = ({
                 <span
                     style={{
                         color: '#FDA769',
-                        fontSize: '12px',
+                        fontSize: '1.2rem',
                     }}
                 >
                     {cost}

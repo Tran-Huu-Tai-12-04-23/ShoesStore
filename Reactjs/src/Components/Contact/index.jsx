@@ -18,7 +18,7 @@ const Contact = () => {
             className="row g-0 wrapper_contact"
             style={{
                 color: theme.color,
-                marginTop: '50px',
+                marginTop: '5rem',
                 position: 'relative',
                 background: theme.secondBackgroundColor,
             }}
@@ -26,10 +26,10 @@ const Contact = () => {
             <Button
                 nameButton="Contact Me"
                 addStyleCustom={{
-                    borderRadius: '32px',
+                    borderRadius: '3.2rem',
                     color: '#fff',
-                    minWidth: '200px',
-                    marginTop: '50px',
+                    minWidth: '20rem',
+                    marginTop: '5rem',
                 }}
                 backgroundColorCustom="#751FFF"
                 width="10%"

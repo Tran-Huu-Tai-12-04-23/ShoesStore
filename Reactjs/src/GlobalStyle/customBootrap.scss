@@ -28,6 +28,7 @@
 
 @media (min-width: 720px) and (max-width: 959px) {
     //md
+
     .w-md-100 {
         width: 100%;
     }
@@ -45,6 +46,15 @@
     }
 }
 @media (max-width: 540px) {
+    .w-sm-custom-50 {
+        width: 50% !important;
+    }
+    .w-sm-custom-100 {
+        width: 100% !important;
+    }
+    .p-sm-custom-0 {
+        padding: 0 !important;
+    }
     .d-sm-none-custom {
         display: none;
     }

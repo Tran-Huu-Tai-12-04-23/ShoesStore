@@ -21,7 +21,7 @@ const TableManager = ({ data = [], show, dataOf }) => {
                 >
                     <th
                         style={{
-                            transform: 'translateX(30px)',
+                            transform: 'translateX(3rem)',
                         }}
                     >
                         {user.firstName}
@@ -38,10 +38,10 @@ const TableManager = ({ data = [], show, dataOf }) => {
                                 marginBottom: 12,
                                 marginRight: 12,
                             }}
-                            width={'86px'}
+                            width={'8.6rem'}
                         ></Button>
 
-                        <Button nameButton={'Edit'} type="edit" width={'86px'}></Button>
+                        <Button nameButton={'Edit'} type="edit" width={'8.6rem'}></Button>
                     </th>
                 </tr>
             );
@@ -76,7 +76,7 @@ const TableManager = ({ data = [], show, dataOf }) => {
                                 </th>
                                 <th
                                     style={{
-                                        transform: 'translateX(-30px)',
+                                        transform: 'translateX(-3rem)',
                                     }}
                                     className={'hidden_mobile'}
                                 >
@@ -91,7 +91,7 @@ const TableManager = ({ data = [], show, dataOf }) => {
                                 <th className={'hidden_mobile'}>Phone Number</th>
                                 <th
                                     style={{
-                                        transform: 'translateX(30px)',
+                                        transform: 'translateX(3rem)',
                                     }}
                                 >
                                     Action

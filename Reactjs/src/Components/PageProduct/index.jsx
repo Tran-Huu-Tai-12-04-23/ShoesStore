@@ -18,7 +18,7 @@ const PageProduct = () => {
             className=""
             style={{
                 color: theme.color,
-                marginTop: '50px',
+                marginTop: '5rem',
                 position: 'relative',
                 background: theme.secondBackgroundColor,
             }}

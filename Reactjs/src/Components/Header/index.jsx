@@ -121,7 +121,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                     <img
                         src={item.linkImage}
                         style={{
-                            width: '50px',
+                            width: '5rem',
                             borderRadius: '50%',
                         }}
                     ></img>
@@ -135,7 +135,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                         <label
                             style={{
                                 color: '#FF6E31',
-                                fontSize: '14px',
+                                fontSize: '1.4rem',
                             }}
                         >
                             Cost : {item.cost}
@@ -152,13 +152,13 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
                                     flexWrap: 'wrap',
-                                    width: 'calc(100% - 50px)',
+                                    width: 'calc(100% - 5rem)',
                                 }}
                             >
                                 <span
                                     style={{
-                                        marginRight: '10px',
-                                        fontSize: '14px',
+                                        marginRight: '1rem',
+                                        fontSize: '1.4rem',
                                     }}
                                 >
                                     Size
@@ -166,28 +166,28 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                 <InputCount
                                     value={item.size}
                                     type="select"
-                                    height="30px"
-                                    width={'50px'}
+                                    height="3rem"
+                                    width={'5rem'}
                                     addStyle={{
                                         color: theme.color,
                                         backgroundColor: theme.secondBackgroundColor,
-                                        fontSize: '14px',
+                                        fontSize: '1.4rem',
                                     }}
                                     color={theme.color}
                                 />
                             </div>
                             <InputCount
                                 value={item.quantity}
-                                height="30px"
+                                height="3rem"
                                 addStyle={{
                                     color: theme.color,
-                                    fontSize: '14px',
+                                    fontSize: '1.4rem',
                                 }}
                                 type="number"
                                 addStyleWrapper={{
                                     border: '1px solid #fff',
                                     borderRadius: 'var(--primary_border_radius)',
-                                    marginLeft: '12px',
+                                    marginLeft: '1.2rem',
                                 }}
                             />
                         </div>
@@ -255,7 +255,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                         display: 'flex',
                         alignItems: 'center',
                         backgroundColor: theme.backgroundColor,
-                        fontSize: '24px',
+                        fontSize: '2.4rem',
                         padding: 0,
                         cursor: 'pointer',
                     }}
@@ -263,25 +263,29 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                         setTypeProductActive('');
                     }}
                 >
-                    <h1
-                        style={{
-                            textTransform: 'uppercase',
-                            fontWeight: 'bold',
-                            cursor: 'pointer',
-                        }}
-                    >
-                        fit
-                    </h1>
-                    <h5
-                        style={{
-                            color: theme.colorActive,
-                            fontSize: '24px',
-                            fontFamily: 'Pacifico,cursive',
-                            cursor: 'pointer',
-                        }}
-                    >
-                        Shoes
-                    </h5>
+                    <Link to="/">
+                        <span
+                            style={{
+                                textTransform: 'uppercase',
+                                fontWeight: 'bold',
+                                cursor: 'pointer',
+                                fontSize: '2.4rem',
+                                color: theme.color,
+                            }}
+                        >
+                            fit
+                        </span>
+                        <span
+                            style={{
+                                color: theme.colorActive,
+                                fontSize: '2.4rem',
+                                fontFamily: 'Pacifico,cursive',
+                                cursor: 'pointer',
+                            }}
+                        >
+                            Shoes
+                        </span>
+                    </Link>
                 </div>
 
                 <div className="col-lg-4 d-lg-block d-md-none d-none">
@@ -334,14 +338,14 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                             display={showCart}
                             // height="30vh"
                             classNameMenu="cart_store"
-                            width="400px"
+                            width="40rem"
                             position="fixed"
                             top="var(--height_header)"
                             right="0"
                             addStyle={{
                                 borderRadius: 'var(--primary_border_radius) 0 0 var(--primary_border_radius) ',
                                 zIndex: 2,
-                                padding: '12px',
+                                padding: '1.2rem',
                                 height: 'calc(100vh - var(--height_header)',
                                 position: 'relative',
                                 zIndex: 2,
@@ -358,7 +362,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                             >
                                 <FcPrevious
                                     style={{
-                                        fontSize: '32px',
+                                        fontSize: '3.2rem',
                                     }}
                                 ></FcPrevious>
                                 <span>Close</span>
@@ -371,7 +375,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                 </div>
                                 <div
                                     style={{
-                                        margin: '12px 0',
+                                        margin: '1.2rem 0',
                                     }}
                                 >
                                     <span>Total : </span>
@@ -383,7 +387,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     icon={
                                         <BsBoxArrowRight
                                             style={{
-                                                fontSize: '24px',
+                                                fontSize: '2.4rem',
                                             }}
                                         />
                                     }
@@ -391,9 +395,9 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     addStyleCustom={{
                                         borderRadius: 'var(--primary_border_radius)',
                                         color: '#fff',
-                                        fontSize: '20px',
+                                        fontSize: '2rem',
                                         margin: '0 auto ',
-                                        marginTop: '12px',
+                                        marginTop: '1.2rem',
                                     }}
                                     backgroundColorCustom={'#FF8B13'}
                                     to="/store"
@@ -412,12 +416,12 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                         >
                             <span
                                 style={{
-                                    height: '30px',
-                                    width: '2px',
+                                    height: '3rem',
+                                    width: '.2rem',
                                     backgroundColor: '#ccc',
                                     borderLeft: '1px solid #ccc',
                                     display: 'block',
-                                    marginLeft: '12px',
+                                    marginLeft: '1.2rem',
                                 }}
                             ></span>
                             <img
@@ -437,16 +441,15 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                             }}
                         >
                             <Link to="/register">
-                                {' '}
                                 <Button
                                     nameButton="Register"
                                     addStyleCustom={{
                                         color: theme.color,
                                         borderRadius: 'var(--primary_border_radius)',
-                                        margin: '0 12px',
+                                        margin: '0 1.2rem',
                                     }}
                                     width="unset"
-                                    height="40px"
+                                    height="4rem"
                                 ></Button>
                             </Link>
 
@@ -459,7 +462,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                         borderRadius: 'var(--primary_border_radius)',
                                     }}
                                     width="unset"
-                                    height="38px"
+                                    height="3.8rem"
                                 ></Button>
                             </Link>
                         </div>
@@ -473,8 +476,8 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                         <AiOutlineMenu
                             className="icon_show_menu_header"
                             style={{
-                                fontSize: '40px',
-                                paddingLeft: '4px',
+                                fontSize: '4rem',
+                                paddingLeft: '.4rem',
                             }}
                             onClick={(e) => {
                                 e.preventDefault();
@@ -489,12 +492,12 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                         width="50%"
                         position="absolute"
                         top="var(--height_header)"
-                        right="20px"
+                        right="2rem"
                         addStyle={{
                             borderRadius: 'var(--primary_border_radius)',
                             zIndex: 2,
-                            padding: '12px',
-                            maxWidth: '200px',
+                            padding: '1.2rem',
+                            maxWidth: '20rem',
                         }}
                         backgroundColor={theme.secondBackgroundColor}
                     >
@@ -511,13 +514,13 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     <img
                                         src={avatarDefault}
                                         style={{
-                                            width: '50px',
+                                            width: '5rem',
                                             borderRadius: '50%',
                                         }}
                                     ></img>
                                     <span
                                         style={{
-                                            fontSize: '24px',
+                                            fontSize: '2.4rem',
                                         }}
                                     >
                                         User Name
@@ -534,7 +537,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     icon={
                                         <AiOutlineSetting
                                             style={{
-                                                fontSize: '32px',
+                                                fontSize: '3.2rem',
                                             }}
                                         />
                                     }
@@ -546,13 +549,13 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     backgroundColorCustom={'rgba(0,0,0,.5)'}
                                     addStyleCustom={{
                                         color: '#fff',
-                                        marginTop: '12px',
+                                        marginTop: '1.2rem',
                                         borderRadius: 'var(--primary_border_radius)',
                                     }}
                                     icon={
                                         <BiLogOut
                                             style={{
-                                                fontSize: '32px',
+                                                fontSize: '3.2rem',
                                             }}
                                         />
                                     }
@@ -572,7 +575,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     icon={
                                         <BiLogIn
                                             style={{
-                                                fontSize: '32px',
+                                                fontSize: '3.2rem',
                                             }}
                                         />
                                     }
@@ -584,13 +587,13 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     backgroundColorCustom={'#FF0032'}
                                     addStyleCustom={{
                                         color: '#fff',
-                                        marginTop: '12px',
+                                        marginTop: '1.2rem',
                                         borderRadius: 'var(--primary_border_radius)',
                                     }}
                                     icon={
                                         <IoIosPersonAdd
                                             style={{
-                                                fontSize: '32px',
+                                                fontSize: '3.2rem',
                                             }}
                                         />
                                     }

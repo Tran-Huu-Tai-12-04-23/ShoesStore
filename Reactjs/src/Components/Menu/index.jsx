@@ -9,7 +9,7 @@ const Menu = ({
     addStyle,
     position,
     children,
-    width = '100px',
+    width = '10rem',
     height = 'unset',
     top = 'unset',
     left = 'unset',

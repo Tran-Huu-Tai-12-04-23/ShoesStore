@@ -1,14 +1,31 @@
 import { useContext, useState, useEffect } from 'react';
-
+import { v4 as uuid } from 'uuid';
 import './style.scss';
 import Button from '../../Components/Button';
 import InputText from '../../Components/InputText';
+import FormAddress from './FormAddress';
 
 import { MdPayments } from 'react-icons/md';
-import { BsArrowRightShort, BsArrowLeftShort, BsCashCoin, BsCreditCard } from 'react-icons/bs';
+import { SlArrowRight } from 'react-icons/sl';
+import { RiCloseFill } from 'react-icons/ri';
+import { FaCcVisa } from 'react-icons/fa';
+import { AiOutlineCreditCard } from 'react-icons/ai';
+import { BsArrowRightShort, BsArrowLeftShort, BsCashCoin, BsCreditCard, BsCheck2Circle } from 'react-icons/bs';
 
-const StepCheckOut = ({ theme }) => {
+const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
     const [indexStep, setIndexStep] = useState(0);
+    const [typePayment, setTypePayment] = useState('');
+    const [typeCard, setTypeCard] = useState('');
+    const [city, setCity] = useState('');
+    const [district, setDistrict] = useState('');
+    const [wards, setWards] = useState('');
+    const [detail, setDetail] = useState('');
+    const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
+    const [cardNumber, setCardNumber] = useState('');
+    const [expireDay, setExpireDay] = useState('');
+    const [CVV, setCVV] = useState('');
+
     const steps = [
         <>
             <div
@@ -17,72 +34,38 @@ const StepCheckOut = ({ theme }) => {
                     color: theme.color,
                 }}
             >
+                <Button
+                    nameButton="Back"
+                    icon={<BsArrowLeftShort />}
+                    width="30%"
+                    addStyleCustom={{
+                        borderRadius: 'var(--primary_border_radius)',
+                        color: theme.color,
+                        justifySelf: 'flex-start',
+                        marginRight: 'calc(80% )',
+                        '--hover_background_color': 'unset',
+                        '--color_hover': '#E90064',
+                        display: typePayment ? 'block' : 'none',
+                    }}
+                    action={(e) => setIndexStep((prev) => prev - 1)}
+                />
                 <h1 className="mb-5 mt-2" style={{ fontSize: 20, color: '#FF8B13' }}>
-                    Order Information
+                    Fill Address
                 </h1>
-                <InputText
-                    value=""
-                    labelInput={'Name'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Phone Number'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Email'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Address'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
+                <FormAddress
+                    theme={theme}
+                    city={city}
+                    district={district}
+                    wards={wards}
+                    detail={detail}
+                    name={name}
+                    number={number}
+                    setCity={setCity}
+                    setDistrict={setDistrict}
+                    setWards={setWards}
+                    setDetail={setDetail}
+                    setName={setName}
+                    setNumber={setNumber}
                 />
             </div>
             <Button
@@ -98,8 +81,8 @@ const StepCheckOut = ({ theme }) => {
                 icon={
                     <BsArrowRightShort
                         style={{
-                            fontSize: '24px',
-                            marginRight: '12px',
+                            fontSize: '2.4rem',
+                            marginRight: '1.2rem',
                         }}
                     />
                 }
@@ -114,7 +97,21 @@ const StepCheckOut = ({ theme }) => {
                     color: theme.color,
                 }}
             >
-                <h1 className="mb-5 mt-2 text-center" style={{ fontSize: 20, color: '#FF8B13', lineHeight: '24px' }}>
+                <Button
+                    nameButton="Back"
+                    icon={<BsArrowLeftShort />}
+                    width="30%"
+                    addStyleCustom={{
+                        borderRadius: 'var(--primary_border_radius)',
+                        color: theme.color,
+                        justifySelf: 'flex-start',
+                        marginRight: 'calc(80% )',
+                        '--hover_background_color': 'unset',
+                        '--color_hover': '#E90064',
+                    }}
+                    action={(e) => setIndexStep((prev) => prev - 1)}
+                />
+                <h1 className="mb-5 mt-2 text-center" style={{ fontSize: 20, color: '#FF8B13', lineHeight: '2.4rem' }}>
                     Check Information and apply discount code
                 </h1>
                 <div
@@ -122,7 +119,7 @@ const StepCheckOut = ({ theme }) => {
                     style={{
                         height: '10%',
                         width: '80%',
-                        fontSize: '14px',
+                        fontSize: '1.4rem',
                     }}
                 >
                     <span
@@ -141,7 +138,7 @@ const StepCheckOut = ({ theme }) => {
                     className="d-flex justify-content-start"
                     style={{
                         height: '10%',
-                        fontSize: '14px',
+                        fontSize: '1.4rem',
                         width: '80%',
                     }}
                 >
@@ -161,7 +158,7 @@ const StepCheckOut = ({ theme }) => {
                     className="d-flex justify-content-start"
                     style={{
                         height: '10%',
-                        fontSize: '14px',
+                        fontSize: '1.4rem',
                         width: '80%',
                     }}
                 >
@@ -181,7 +178,7 @@ const StepCheckOut = ({ theme }) => {
                     className="d-flex justify-content-start mb-5"
                     style={{
                         height: '10%',
-                        fontSize: '14px',
+                        fontSize: '1.4rem',
                         width: '80%',
                     }}
                 >
@@ -203,9 +200,9 @@ const StepCheckOut = ({ theme }) => {
                     styleCustomWrapper={{
                         color: theme.color,
                         borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
+                        borderBottom: '.1rem solid',
                         borderImageSlice: 1,
-                        borderWidth: '1px',
+                        borderWidth: '.1rem',
                         borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
                         marginBottom: '10%',
                     }}
@@ -227,8 +224,8 @@ const StepCheckOut = ({ theme }) => {
                 icon={
                     <BsArrowRightShort
                         style={{
-                            fontSize: '24px',
-                            marginRight: '12px',
+                            fontSize: '2.4rem',
+                            marginRight: '1.2rem',
                         }}
                     />
                 }
@@ -243,6 +240,21 @@ const StepCheckOut = ({ theme }) => {
                     color: theme.color,
                 }}
             >
+                <Button
+                    nameButton="Back"
+                    icon={<BsArrowLeftShort />}
+                    width="30%"
+                    addStyleCustom={{
+                        borderRadius: 'var(--primary_border_radius)',
+                        color: theme.color,
+                        justifySelf: 'flex-start',
+                        marginRight: 'calc(80% )',
+                        '--hover_background_color': 'unset',
+                        '--color_hover': '#E90064',
+                        display: typePayment ? 'block' : 'none',
+                    }}
+                    action={(e) => setIndexStep((prev) => prev - 1)}
+                />
                 <h1 className="mb-5 mt-2" style={{ fontSize: 20, color: '#FF8B13' }}>
                     Choose Payment
                 </h1>
@@ -250,11 +262,11 @@ const StepCheckOut = ({ theme }) => {
                     className="d-flex justify-content-start "
                     style={{
                         height: '10%',
-                        fontSize: '14px',
+                        fontSize: '1.4rem',
                         width: '80%',
-                        borderBottom: '2px solid',
+                        borderBottom: '.2rem solid',
                         borderImageSlice: 1,
-                        borderWidth: '2px',
+                        borderWidth: '.2rem',
                         borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
                     }}
                 >
@@ -279,49 +291,53 @@ const StepCheckOut = ({ theme }) => {
                 </div>
                 <div className="d-flex justify-content-around mt-5 w-100">
                     <Button
-                        nameButton="Cash"
-                        backgroundColorCustom={'#AD7BE9'}
+                        nameButton={'Cash'}
+                        backgroundColorCustom={typePayment === 'cash' ? '#1F8A70' : '#AD7BE9'}
                         addStyleCustom={{
                             color: theme.color,
                             borderRadius: 'var(--primary_border_radius)',
-                            minWidth: '150px',
-                            marginLeft: '12px',
+                            minWidth: '15rem',
+                            marginLeft: '1.2rem',
                             maxWidth: '50%',
+                            border: typePayment === 'cash' ? '.1rem solid #ccc' : 'unset',
                         }}
                         icon={
                             <BsCashCoin
                                 style={{
-                                    fontSize: '24px',
-                                    marginRight: '12px',
+                                    fontSize: '2.4rem',
+                                    marginRight: '1.2rem',
                                 }}
                             />
                         }
                         width="unset"
+                        action={(e) => setTypePayment('cash')}
                     />
                     <Button
                         nameButton="Credit Card"
-                        backgroundColorCustom={'#E90064'}
+                        backgroundColorCustom={typePayment === 'credit' ? '#1F8A70' : '#E90064'}
                         addStyleCustom={{
                             color: theme.color,
-                            minWidth: '150px',
-                            marginRight: '12px',
+                            minWidth: '15rem',
+                            marginRight: '1.2rem',
                             maxWidth: '50%',
                             borderRadius: 'var(--primary_border_radius)',
+                            border: typePayment === 'credit' ? '.1rem solid #ccc' : 'unset',
                         }}
                         icon={
                             <BsCreditCard
                                 style={{
-                                    fontSize: '24px',
-                                    marginRight: '12px',
+                                    fontSize: '2.4rem',
+                                    marginRight: '1.2rem',
                                 }}
                             />
                         }
                         width="unset"
+                        action={(e) => setTypePayment('credit')}
                     />
                 </div>
             </div>
             <Button
-                nameButton="Back"
+                nameButton={typePayment ? 'Next' : 'Back'}
                 backgroundColorCustom={'#FF8B13'}
                 addStyleCustom={{
                     color: theme.color,
@@ -331,15 +347,34 @@ const StepCheckOut = ({ theme }) => {
                 }}
                 width="100%"
                 icon={
-                    <BsArrowLeftShort
-                        style={{
-                            fontSize: '24px',
-                            marginRight: '12px',
-                        }}
-                    />
+                    typePayment ? (
+                        <BsArrowRightShort
+                            style={{
+                                fontSize: '2.4rem',
+                                marginRight: '1.2rem',
+                            }}
+                        />
+                    ) : (
+                        <BsArrowLeftShort
+                            style={{
+                                fontSize: '2.4rem',
+                                marginRight: '1.2rem',
+                            }}
+                        />
+                    )
                 }
-                positionIcon="left"
-                action={(e) => setIndexStep((prev) => prev - 1)}
+                positionIcon={typePayment ? 'right' : 'left'}
+                action={(e) => {
+                    if (typePayment) {
+                        if (typePayment === 'cash') {
+                            setIndexStep((prev) => prev + 2);
+                        } else {
+                            setIndexStep((prev) => prev + 1);
+                        }
+                    } else {
+                        setIndexStep((prev) => prev - 1);
+                    }
+                }}
             />
         </>,
         <>
@@ -349,76 +384,128 @@ const StepCheckOut = ({ theme }) => {
                     color: theme.color,
                 }}
             >
+                <Button
+                    nameButton="Back"
+                    icon={<BsArrowLeftShort />}
+                    width="30%"
+                    addStyleCustom={{
+                        borderRadius: 'var(--primary_border_radius)',
+                        color: theme.color,
+                        justifySelf: 'flex-start',
+                        marginRight: 'calc(80% )',
+                        '--hover_background_color': 'unset',
+                        '--color_hover': '#E90064',
+                        display: typePayment ? 'block' : 'none',
+                    }}
+                    action={(e) => setIndexStep((prev) => prev - 1)}
+                />
                 <h1 className="mb-5 mt-2" style={{ fontSize: 20, color: '#FF8B13' }}>
-                    Order Information
+                    Card Detail
                 </h1>
-                <InputText
-                    value=""
-                    labelInput={'Name'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Phone Number'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Email'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Address'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
+                <div className="w-100 ">
+                    <h5
+                        className="mb-4 "
+                        style={{
+                            textAlign: 'center',
+                        }}
+                    >
+                        Select Card tType
+                    </h5>
+                    <div className="option d-flex justify-content-evenly align-items-center mb-5">
+                        <Button
+                            addStyleCustom={{
+                                borderRadius: 'var(--primary_border_radius)',
+                            }}
+                            icon={
+                                <FaCcVisa
+                                    style={{
+                                        fontSize: '2.4rem',
+                                        color: typeCard === 'visa' ? '#1F8A70' : theme.color,
+                                    }}
+                                ></FaCcVisa>
+                            }
+                            action={(e) => setTypeCard('visa')}
+                            nameButton=""
+                        ></Button>
+                        <Button
+                            addStyleCustom={{
+                                borderRadius: 'var(--primary_border_radius)',
+                            }}
+                            icon={
+                                <AiOutlineCreditCard
+                                    style={{
+                                        fontSize: '2.4rem',
+                                        color: typeCard === 'normal' ? '#1F8A70' : theme.color,
+                                    }}
+                                />
+                            }
+                            action={(e) => setTypeCard('normal')}
+                            nameButton=""
+                        ></Button>
+                    </div>
+                    <InputText
+                        value={cardNumber}
+                        styleCustomWrapper={{
+                            color: theme.color,
+                            borderRadius: 'var(--primary_border_radius)',
+                            borderBottom: '.2rem solid',
+                            borderImageSlice: 1,
+                            borderWidth: '.2rem',
+                            borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
+                            marginBottom: '10%',
+                            marginTop: '2rem',
+                        }}
+                        styleCustomInput={{ color: theme.color }}
+                        color={theme.color}
+                        width="100%"
+                        height="5rem"
+                        labelInput={'Card Number'}
+                        handleOnchange={(e) => setCardNumber(e.target.value)}
+                    ></InputText>
+                    <div className="d-flex justify-content-between align-items-center ">
+                        <InputText
+                            value={expireDay}
+                            styleCustomWrapper={{
+                                color: theme.color,
+                                borderRadius: 'var(--primary_border_radius)',
+                                borderBottom: '.2rem solid',
+                                borderImageSlice: 1,
+                                borderWidth: '.2rem',
+                                borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
+                                marginBottom: '10%',
+                                marginTop: '2rem',
+                            }}
+                            styleCustomInput={{ color: theme.color }}
+                            color={theme.color}
+                            width="60%"
+                            height="5rem"
+                            labelInput={'Expire Day '}
+                            handleOnchange={(e) => setExpireDay(e.target.value)}
+                        ></InputText>
+                        <InputText
+                            value={CVV}
+                            styleCustomWrapper={{
+                                color: theme.color,
+                                borderRadius: 'var(--primary_border_radius)',
+                                borderBottom: '.2rem solid',
+                                borderImageSlice: 1,
+                                borderWidth: '.2rem',
+                                borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
+                                marginBottom: '10%',
+                                marginTop: '2rem',
+                            }}
+                            styleCustomInput={{ color: theme.color }}
+                            color={theme.color}
+                            width="25%"
+                            height="5rem"
+                            labelInput={'CVV'}
+                            handleOnchange={(e) => setCVV(e.target.value)}
+                        ></InputText>
+                    </div>
+                </div>
             </div>
             <Button
-                nameButton="Next"
+                nameButton={'Next'}
                 backgroundColorCustom={'#FF8B13'}
                 addStyleCustom={{
                     color: theme.color,
@@ -430,13 +517,15 @@ const StepCheckOut = ({ theme }) => {
                 icon={
                     <BsArrowRightShort
                         style={{
-                            fontSize: '24px',
-                            marginRight: '12px',
+                            fontSize: '2.4rem',
+                            marginRight: '1.2rem',
                         }}
                     />
                 }
-                positionIcon="right"
-                action={(e) => setIndexStep((prev) => prev + 1)}
+                positionIcon={'right'}
+                action={(e) => {
+                    setIndexStep((prev) => prev + 1);
+                }}
             />
         </>,
         <>
@@ -446,73 +535,51 @@ const StepCheckOut = ({ theme }) => {
                     color: theme.color,
                 }}
             >
+                <Button
+                    nameButton="Back"
+                    icon={<BsArrowLeftShort />}
+                    width="30%"
+                    addStyleCustom={{
+                        borderRadius: 'var(--primary_border_radius)',
+                        color: theme.color,
+                        justifySelf: 'flex-start',
+                        marginRight: 'calc(80% )',
+                        '--hover_background_color': 'unset',
+                        '--color_hover': '#E90064',
+                    }}
+                    action={(e) => setIndexStep((prev) => prev - 1)}
+                />
                 <h1 className="mb-5 mt-2" style={{ fontSize: 20, color: '#FF8B13' }}>
-                    Order Information
+                    Check Information
                 </h1>
-                <InputText
-                    value=""
-                    labelInput={'Name'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Phone Number'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Email'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
-                <InputText
-                    value=""
-                    labelInput={'Address'}
-                    styleCustomWrapper={{
-                        color: theme.color,
-                        borderRadius: 'var(--primary_border_radius)',
-                        borderBottom: '1px solid',
-                        borderImageSlice: 1,
-                        borderWidth: '1px',
-                        borderImageSource: ' linear-gradient(to left, #743ad5, #d53a9d)',
-                        marginBottom: '10%',
-                    }}
-                    styleCustomInput={{ color: theme.color }}
-                    color={theme.color}
-                    width="80%"
-                />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td className="w-25">Name:</td>
+                            <td>{name}</td>
+                        </tr>
+                        <tr>
+                            <td className="w-25">Your phone:</td>
+                            <td>{number}</td>
+                        </tr>
+                        <tr>
+                            <td className="w-25">City:</td>
+                            <td>{city}</td>
+                        </tr>
+                        <tr>
+                            <td className="w-25">District:</td>
+                            <td>{district}</td>
+                        </tr>
+                        <tr>
+                            <td className="w-25">Ward:</td>
+                            <td>{wards}</td>
+                        </tr>
+                        <tr>
+                            <td className="w-25">Detail:</td>
+                            <td>{detail}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <Button
                 nameButton="Check Out"
@@ -527,18 +594,54 @@ const StepCheckOut = ({ theme }) => {
                 icon={
                     <MdPayments
                         style={{
-                            fontSize: '24px',
-                            marginRight: '12px',
+                            fontSize: '2.4rem',
+                            marginRight: '1.2rem',
                         }}
                     />
                 }
                 action={(e) => setIndexStep((prev) => prev + 1)}
             />
         </>,
+        <div
+            className="w-100 d-flex justify-content-center align-items-center "
+            style={{
+                height: '100%',
+            }}
+        >
+            <BsCheck2Circle
+                style={{
+                    color: '#1F8A70',
+                    fontSize: '4rem',
+                }}
+            />
+            <h1
+                style={{
+                    color: theme.color,
+                    fontSize: '2.4rem',
+                    marginLeft: '1.2rem',
+                }}
+            >
+                Order Successfully!
+            </h1>
+        </div>,
     ];
 
     const renderStep = () => {
         return steps[indexStep];
+    };
+
+    const renderNofiStep = () => {
+        return Array.from(Array(5).keys()).map((number) => {
+            return (
+                <div
+                    key={uuid()}
+                    style={{
+                        backgroundColor: indexStep === number ? theme.backgroundColor : theme.color,
+                    }}
+                    onClick={(e) => setIndexStep(number)}
+                ></div>
+            );
+        });
     };
     return (
         <div
@@ -547,34 +650,85 @@ const StepCheckOut = ({ theme }) => {
                 backgroundColor: theme.thirdBackgroundColor,
                 height: '100vh',
                 position: 'relative',
+                display: display,
+                transition: 'all 0.5s ease-in-out',
             }}
         >
+            {indexStep < 5 && (
+                <div
+                    className="wrapper_manager_step_check-out d-lg-flex d-xl-flex d-md-none"
+                    style={{
+                        backgroundColor: theme.thirdBackgroundColor,
+                    }}
+                >
+                    {renderNofiStep()}
+                </div>
+            )}
             <div
-                className="wrapper_manager_step_check-out"
+                className="icon_close d-md-none d-lg-block d-xl-block"
                 style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '-3rem',
                     backgroundColor: theme.thirdBackgroundColor,
+                    borderRadius: '.8rem 0 0 .8rem',
+                    cursor: 'pointer',
                 }}
+                onClick={(e) => setShowOrder(false)}
             >
-                <div
-                    style={{
-                        backgroundColor: theme.backgroundColor,
+                <Button
+                    width="3rem"
+                    height="100%"
+                    addStyleCustom={{
+                        padding: '2.4rem 0',
+                        color: theme.color,
+                        borderRadius: '.8rem 0 0 .8rem',
+                        minWidth: '2rem',
                     }}
-                ></div>
-                <div
-                    style={{
-                        backgroundColor: theme.color,
+                    icon={
+                        <SlArrowRight
+                            style={{
+                                fontSize: '2.4rem',
+                                margin: '0 auto',
+                            }}
+                        ></SlArrowRight>
+                    }
+                    nameButton=""
+                ></Button>
+            </div>
+            <div
+                className="icon_close d-md-block d-lg-none d-xl-none"
+                style={{
+                    position: 'absolute',
+                    top: '1rem',
+                    right: '-3rem',
+                    transform: 'translateX(-50%)  ',
+                    backgroundColor: theme.thirdBackgroundColor,
+                    borderRadius: '.8rem 0 0 .8rem',
+                    cursor: 'pointer',
+                }}
+                onClick={(e) => setShowOrder(false)}
+            >
+                <Button
+                    width="5rem"
+                    height="3rem"
+                    addStyleCustom={{
+                        padding: '2.4rem 0',
+                        color: theme.color,
+                        borderRadius: '.8rem 0 0 .8rem',
+                        minWidth: '2rem',
+                        minHeight: '3rem',
                     }}
-                ></div>
-                <div
-                    style={{
-                        backgroundColor: theme.color,
-                    }}
-                ></div>
-                <div
-                    style={{
-                        backgroundColor: theme.color,
-                    }}
-                ></div>
+                    icon={
+                        <RiCloseFill
+                            style={{
+                                fontSize: '2.4rem',
+                                margin: '0 auto',
+                            }}
+                        ></RiCloseFill>
+                    }
+                    nameButton=""
+                ></Button>
             </div>
             {renderStep()}
         </div>

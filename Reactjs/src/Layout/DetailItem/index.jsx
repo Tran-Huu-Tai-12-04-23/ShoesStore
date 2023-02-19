@@ -50,16 +50,16 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                     >
                                         <h5
                                             style={{
-                                                fontSize: '24px',
+                                                fontSize: '2.4rem',
                                             }}
                                         >
                                             Nike Air
                                         </h5>
                                         <label
                                             style={{
-                                                fontSize: '14px',
+                                                fontSize: '1.4rem',
                                                 color: '#ccc',
-                                                margin: '12px 0 ',
+                                                margin: '1.2rem 0 ',
                                             }}
                                         >
                                             Men Shoes
@@ -80,7 +80,7 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                         style={{
                                             position: 'absolute',
                                             left: '16%',
-                                            fontSize: '100px',
+                                            fontSize: '10rem',
                                             cursor: 'pointer',
                                         }}
                                     />
@@ -88,7 +88,7 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                         style={{
                                             position: 'absolute',
                                             right: '16%',
-                                            fontSize: '100px',
+                                            fontSize: '10rem',
                                             cursor: 'pointer',
                                         }}
                                     />
@@ -101,37 +101,37 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                         position: 'relative',
                                         color: theme.color,
                                         alignItems: 'center',
-                                        transform: 'translateY(-100px)',
+                                        transform: 'translateY(-10rem)',
                                         zIndex: 4,
                                     }}
                                 >
                                     <div className="options_color_detail_item">
                                         <div
                                             style={{
-                                                width: '40px',
-                                                height: '40px',
+                                                width: '4rem',
+                                                height: '4rem',
                                                 backgroundColor: 'red',
                                                 display: 'inline-block',
-                                                borderRadius: '4px',
+                                                borderRadius: '.4rem',
                                                 border: '1px solid #fff',
                                             }}
                                         ></div>
                                         <div
                                             style={{
-                                                width: '40px',
+                                                width: '4rem',
                                                 backgroundColor: '#000',
-                                                borderRadius: '4px',
+                                                borderRadius: '.4rem',
                                                 display: 'inline-block',
-                                                height: '40px',
+                                                height: '4rem',
                                                 border: '1px solid #fff',
-                                                margin: '0 12px',
+                                                margin: '0 1.2rem',
                                             }}
                                         ></div>
                                         <div
                                             style={{
-                                                width: '40px',
-                                                height: '40px',
-                                                borderRadius: '4px',
+                                                width: '4rem',
+                                                height: '4rem',
+                                                borderRadius: '.4rem',
                                                 display: 'inline-block',
                                                 border: '1px solid #fff',
                                                 backgroundColor: '#fff',
@@ -147,7 +147,7 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                         position: 'relative',
                                         color: theme.color,
                                         alignItems: 'center',
-                                        transform: 'translateY(-100px)',
+                                        transform: 'translateY(-10rem)',
                                         zIndex: 4,
                                     }}
                                 >
@@ -157,7 +157,7 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                         value={size}
                                         onChange={(e) => setSize(e.target.value)}
                                         style={{
-                                            width: '100px',
+                                            width: '10rem',
                                             background: theme.secondBackgroundColor,
                                             marginLeft: 12,
                                             cursor: 'pointer',
@@ -182,29 +182,29 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                         position: 'relative',
                                         color: theme.color,
                                         alignItems: 'center',
-                                        transform: 'translateY(-100px)',
+                                        transform: 'translateY(-10rem)',
                                         zIndex: 4,
                                     }}
                                 >
                                     <Button
                                         nameButton="Buy"
                                         backgroundColorCustom={'rgba(0,0,0,.5)'}
-                                        width="150px"
-                                        height="40px"
+                                        width="15rem"
+                                        height="4rem"
                                         addStyleCustom={{
                                             color: '#fff',
                                             borderRadius: 'var(--primary_border_radius)',
-                                            margin: '0 12px',
+                                            margin: '0 1.2rem',
                                         }}
                                     ></Button>
                                     <Button
                                         nameButton="Add Cart"
                                         backgroundColorCustom={'#FF8B13'}
-                                        width="150px"
-                                        height="40px"
+                                        width="15rem"
+                                        height="4rem"
                                         addStyleCustom={{
                                             color: '#fff',
-                                            margin: '0 12px',
+                                            margin: '0 1.2rem',
                                             borderRadius: 'var(--primary_border_radius)',
                                         }}
                                     ></Button>
@@ -219,36 +219,36 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                         position: 'relative',
                                         color: theme.color,
                                         alignItems: 'center',
-                                        transform: 'translateY(-100px)',
+                                        transform: 'translateY(-10rem)',
                                         zIndex: 4,
                                     }}
                                 >
                                     <img
                                         src={nikeAir2}
                                         style={{
-                                            width: '350px',
+                                            width: '35rem',
                                             border: '1px solid #fff',
                                             cursor: 'pointer',
-                                            height: '250px',
+                                            height: '25rem',
                                         }}
                                     ></img>
                                     <img
                                         src={nikeAir2}
                                         style={{
-                                            width: '350px',
+                                            width: '35rem',
                                             border: '1px solid #fff',
-                                            height: '250px',
-                                            margin: '0 24px',
+                                            height: '25rem',
+                                            margin: '0 2.4rem',
                                             cursor: 'pointer',
                                         }}
                                     ></img>
                                     <img
                                         src={nikeAir2}
                                         style={{
-                                            width: '350px',
+                                            width: '35rem',
                                             border: '1px solid #fff',
                                             cursor: 'pointer',
-                                            height: '250px',
+                                            height: '25rem',
                                         }}
                                     ></img>
                                 </div>
@@ -309,7 +309,7 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                     style={{
                                         color: theme.color,
                                         textAlign: 'center',
-                                        lineHeight: '24px',
+                                        lineHeight: '2.4rem',
                                         margin: '0 auto',
                                     }}
                                 >

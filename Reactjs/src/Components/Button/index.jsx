@@ -8,7 +8,7 @@ const Button = ({
     type = 'default',
     action = () => {},
     nameButton = 'default',
-    height = '40px',
+    height = '4rem',
     width = '40%',
     backgroundColorCustom,
     addStyleCustom = {},
@@ -49,9 +49,6 @@ const Button = ({
                 break;
             }
             default:
-                setStylesCustom({
-                    backgroundColor: backgroundColorCustom ? backgroundColorCustom : 'transparent',
-                });
         }
     }, [type]);
     return (
@@ -60,9 +57,11 @@ const Button = ({
                 <button
                     className={`${styles.button}`}
                     style={{
+                        padding: '1.2rem 0',
                         ...stylesCustom,
                         height: height,
                         width: width,
+                        backgroundColor: backgroundColorCustom,
                         ...addStyleCustom,
                     }}
                     onClick={action}
@@ -77,9 +76,11 @@ const Button = ({
                     <button
                         className={styles.button}
                         style={{
+                            padding: '1.2rem 0',
                             ...stylesCustom,
                             height: height,
                             width: width,
+                            backgroundColor: backgroundColorCustom,
                             ...addStyleCustom,
                         }}
                         onClick={action}
@@ -95,9 +96,11 @@ const Button = ({
                     disabled
                     className={styles.button}
                     style={{
+                        padding: '1.2rem 0',
                         ...stylesCustom,
                         height: height,
                         width: width,
+                        backgroundColor: backgroundColorCustom,
                         ...addStyleCustom,
                     }}
                     onClick={action}

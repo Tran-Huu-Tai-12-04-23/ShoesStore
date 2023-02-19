@@ -18,7 +18,7 @@ const Poster = () => {
             className="row g-0 wrapper_poster_home"
             style={{
                 color: theme.color,
-                marginTop: '50px',
+                marginTop: '5rem',
                 position: 'relative',
             }}
         >
@@ -38,12 +38,12 @@ const Poster = () => {
                     nameButton="Shop"
                     backgroundColorCustom="rgba(0,0,0,.5)"
                     addStyleCustom={{
-                        borderRadius: '40px',
+                        borderRadius: '4rem',
                         color: '#fff',
                         fontWeight: 'bold',
                     }}
                     width="20%"
-                    height="40px"
+                    height="4rem"
                 ></Button>
             </div>
             <div
@@ -64,13 +64,13 @@ const Poster = () => {
                     nameButton="Shop"
                     backgroundColorCustom="rgba(0,0,0,.5)"
                     addStyleCustom={{
-                        borderRadius: '40px',
+                        borderRadius: '4rem',
                         color: '#fff',
 
                         fontWeight: 'bold',
                     }}
                     width="20%"
-                    height="40px"
+                    height="4rem"
                 ></Button>
             </div>
             <div
@@ -91,12 +91,12 @@ const Poster = () => {
                     nameButton="Shop"
                     backgroundColorCustom="rgba(0,0,0,.5)"
                     addStyleCustom={{
-                        borderRadius: '40px',
+                        borderRadius: '4rem',
                         color: '#fff',
                         fontWeight: 'bold',
                     }}
                     width="20%"
-                    height="40px"
+                    height="4rem"
                 ></Button>
             </div>
         </div>

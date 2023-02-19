@@ -11,10 +11,13 @@ const InputText = ({
     styleCustomWrapper = {},
     styleCustomInput = {},
     color = '#fff',
-    width = '300px',
+    width = '30rem',
+    handleOnFocus = (e) => {},
+    handleOnBlur = (e) => {},
+    handleOnchange = (e) => {},
+    height = 40,
 }) => {
     const [theme, setTheme] = useContext(ThemeApp);
-    const [valueInput, setValueInput] = useState(value ? value : '');
 
     return (
         <div
@@ -22,18 +25,21 @@ const InputText = ({
             style={{
                 ...styleCustomWrapper,
                 '--width_input': width,
+                height: height,
             }}
         >
             <input
                 className="z-2"
                 type={type}
-                value={valueInput}
-                onChange={(e) => setValueInput(e.target.value)}
+                value={value}
+                onChange={handleOnchange}
                 style={{
                     zIndex: 2,
                     ...styleCustomInput,
                 }}
                 placeholder=" "
+                onFocus={handleOnFocus}
+                // onBlurCapture={handleOnBlur}
             ></input>
             <label
                 style={{

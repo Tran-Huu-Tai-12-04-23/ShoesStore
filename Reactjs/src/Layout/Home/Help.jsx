@@ -15,7 +15,7 @@ const Help = () => {
             className="row g-0 wrapper_help_home"
             style={{
                 color: theme.color,
-                marginTop: '50px',
+                marginTop: '5rem',
                 position: 'relative',
             }}
         >
@@ -35,13 +35,13 @@ const Help = () => {
                             nameButton="Go To Help Center?"
                             backgroundColorCustom={'#751FFF'}
                             addStyleCustom={{
-                                borderRadius: '100px',
+                                borderRadius: '10rem',
                                 color: '#fff',
                                 fontWeight: 'bold',
 
-                                fontSize: '18px',
+                                fontSize: '1.8rem',
                             }}
-                            height="50px"
+                            height="5rem"
                             width="100%"
                         ></Button>
                     </Link>

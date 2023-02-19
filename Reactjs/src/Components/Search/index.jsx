@@ -49,7 +49,7 @@ const Search = ({ search, setSearch, styleCustom = () => {} }) => {
                     className={'search'}
                     onClick={(e) => handleShowInputSearch(e, 1)}
                     style={{
-                        width: focusSearch ? '' : '50px',
+                        width: focusSearch ? '' : '5rem',
                         backgroundColor: theme.secondBackgroundColor,
                     }}
                 >
@@ -86,7 +86,7 @@ const Search = ({ search, setSearch, styleCustom = () => {} }) => {
                     style={{
                         textAlign: 'center',
                         width: '100%',
-                        marginBottom: '24px',
+                        marginBottom: '2.4rem',
                         color: theme.secondBackgroundColor,
                     }}
                 >

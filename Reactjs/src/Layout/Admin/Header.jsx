@@ -36,7 +36,7 @@ const Header = ({}) => {
             <div className={'wrapper_info'}>
                 <SettingTheme></SettingTheme>
 
-                <img style={{ width: '50px', borderRadius: '50%' }} src={adminAvatar} />
+                <img style={{ width: '5rem', borderRadius: '50%' }} src={adminAvatar} />
             </div>
         </div>
     );

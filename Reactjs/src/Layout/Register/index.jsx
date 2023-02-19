@@ -110,7 +110,7 @@ const Register = () => {
                     style={{
                         position: 'absolute',
                         top: '-15%',
-                        padding: '12px',
+                        padding: '1.2rem',
                         border: '1px solid #fff',
                         borderRadius: 'var(--primary_border_radius)',
                         minWidth: '150px',
@@ -119,7 +119,7 @@ const Register = () => {
                     <Link
                         to="/"
                         style={{
-                            top: '-100px',
+                            top: '-10rem',
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
@@ -226,15 +226,15 @@ const Register = () => {
                             nameButton="Register"
                             addStyleCustom={{
                                 textTransform: 'uppercase',
-                                marginTop: '20px',
+                                marginTop: '2rem',
                                 color: '#ffff',
                                 fontWeight: 'bold',
-                                borderRadius: '8px',
-                                minWidth: '100px',
+                                borderRadius: '.8rem',
+                                minWidth: '10rem',
                             }}
                             backgroundColorCustom="#C92C6D"
                             width="20%"
-                            height="40px"
+                            height="4rem"
                         ></Button>
                     </div>
 

@@ -241,8 +241,8 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                         >
                             <h1
                                 style={{
-                                    fontSize: '24px',
-                                    marginRight: '4px',
+                                    fontSize: '2.4rem',
+                                    marginRight: '.4rem',
                                 }}
                             >
                                 All
@@ -263,7 +263,7 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                             <div
                                 className="d-xl-none d-lg-none"
                                 style={{
-                                    minWidth: '100px',
+                                    minWidth: '1rem',
                                 }}
                             >
                                 <Button
@@ -272,13 +272,13 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                     addStyleCustom={{
                                         color: theme.color,
                                         borderRadius: 'var(--primary_border_radius)',
-                                        minWidth: '100px',
+                                        minWidth: '1rem',
                                     }}
                                     icon={
                                         <AiTwotoneSetting
                                             style={{
                                                 color: theme.color,
-                                                fontSize: '24px',
+                                                fontSize: '2.4rem',
                                             }}
                                         />
                                     }
@@ -293,15 +293,15 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                 addStyleCustom={{
                                     color: theme.color,
                                     borderRadius: 'var(--primary_border_radius)',
-                                    minWidth: '100px',
+                                    minWidth: '1rem',
                                     padding: 0,
-                                    transform: ' translateX(24px)',
+                                    transform: ' translateX(2.4rem)',
                                 }}
                                 icon={
                                     <IoIosArrowDown
                                         style={{
                                             color: theme.color,
-                                            fontSize: '24px',
+                                            fontSize: '2.4rem',
                                         }}
                                     />
                                 }
@@ -314,14 +314,14 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                             <Menu
                                 display={showMenuSortOptions}
                                 position="absolute"
-                                bottom="-140px"
+                                bottom="-14rem"
                                 right="0"
                                 backgroundColor={theme.secondBackgroundColor}
                                 addStyle={{
                                     color: '#ccc',
                                     borderRadius: 'var(--primary_border_radius)',
-                                    padding: '12px',
-                                    maxHeight: '150px',
+                                    padding: '1.2rem',
+                                    maxHeight: '15rem',
                                     zIndex: 2,
                                     color: theme.color,
                                     '--background_color_hover': theme.thirdBackgroundColor,
@@ -330,8 +330,8 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                             >
                                 <div
                                     style={{
-                                        minWidth: '250px',
-                                        padding: '4px 12px',
+                                        minWidth: '25rem',
+                                        padding: '.4rem 1.2rem',
                                         display: 'flex',
                                         justifyContent: 'space-between',
                                         alignItems: 'center',
@@ -342,14 +342,14 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                     <RxCaretSort
                                         style={{
                                             color: theme.color,
-                                            fontSize: '32px',
+                                            fontSize: '3.2rem',
                                         }}
                                     />
                                 </div>
                                 <div
                                     style={{
-                                        minWidth: '200px',
-                                        padding: '4px 12px',
+                                        minWidth: '20rem',
+                                        padding: '.4rem 1.2rem',
                                         display: 'flex',
                                         justifyContent: 'space-between',
                                         borderRadius: 'var(--primary_border_radius)',
@@ -360,14 +360,14 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                     <FcGenericSortingAsc
                                         style={{
                                             color: theme.color,
-                                            fontSize: '32px',
+                                            fontSize: '3.2rem',
                                         }}
                                     />
                                 </div>
                                 <div
                                     style={{
-                                        minWidth: '200px',
-                                        padding: '4px 12px',
+                                        minWidth: '20rem',
+                                        padding: '.4rem 1.2rem',
                                         display: 'flex',
                                         justifyContent: 'space-between',
                                         borderRadius: 'var(--primary_border_radius)',
@@ -378,7 +378,7 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                     <FcGenericSortingDesc
                                         style={{
                                             color: theme.color,
-                                            fontSize: '32px',
+                                            fontSize: '3.2rem',
                                         }}
                                     />
                                 </div>
@@ -430,12 +430,12 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                 addStyleCustom={{
                                     margin: '0 auto',
                                     textAlign: 'center',
-                                    padding: '12px 24px 10px 12px',
+                                    padding: '1.2rem 2.4rem 1rem 1.2rem',
                                     backgroundColor: `${theme.secondBackgroundColor}`,
                                     borderRadius: ' var(--primary_border_radius)  var(--primary_border_radius) 0 0',
                                     color: '#fff',
                                 }}
-                                width="150px"
+                                width="15rem"
                                 icon={
                                     <IoIosArrowUp
                                         style={{
@@ -489,13 +489,13 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                             <div
                                 className="row g-2 "
                                 style={{
-                                    minHeight: '500px',
+                                    minHeight: '50rem',
                                 }}
                             >
                                 <DisplayItem
                                     yItem
                                     data={productFiltered}
-                                    // width={`${!showFilter ? 'calc(100% / 4 - 12px)' : 'calc(100%/3 - 12px)'}`}
+                                    // width={`${!showFilter ? 'calc(100% / 4 - 1.2rem)' : 'calc(100%/3 - 1.2rem)'}`}
                                     classNameCustom={'col-xl-3 col-lg-4 col-md-6 col-sm-12'}
                                     numberProduct={numberProduct}
                                     dataFilter={dataFilter}
@@ -509,10 +509,10 @@ const DisplayProduct = ({ typeProductActive = 'All' }) => {
                                 addStyleCustom={{
                                     color: theme.color,
                                     borderRadius: 'var(--primary_border_radius)',
-                                    marginTop: '24px',
+                                    marginTop: '2.4rem',
                                     backgroundColor: theme.secondBackgroundColor,
-                                    margin: '24px auto',
-                                    maxWidth: '300px',
+                                    margin: '2.4rem auto',
+                                    maxWidth: '30rem',
                                     display: numberProduct <= productFiltered.length - 1 ? 'block' : 'none',
                                 }}
                                 width="50%"

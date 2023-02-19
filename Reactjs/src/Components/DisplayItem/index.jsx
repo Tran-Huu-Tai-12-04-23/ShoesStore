@@ -48,9 +48,9 @@ const DisplayItem = ({ data = [], classNameCustom, numberProduct, dataFilter }) 
                                     addStyleCustom={{
                                         color: theme.color,
                                         borderRadius: 'var(--primary_border_radius)',
-                                        fontSize: '14px',
+                                        fontSize: '1.4rem',
                                     }}
-                                    height="30px"
+                                    height="3rem"
                                     width="45%"
                                 ></Button>
                                 <Button
@@ -59,9 +59,9 @@ const DisplayItem = ({ data = [], classNameCustom, numberProduct, dataFilter }) 
                                     addStyleCustom={{
                                         color: '#fff',
                                         borderRadius: 'var(--primary_border_radius)',
-                                        fontSize: '14px',
+                                        fontSize: '1.4rem',
                                     }}
-                                    height="30px"
+                                    height="3rem"
                                     width="45%"
                                 ></Button>
                             </div>

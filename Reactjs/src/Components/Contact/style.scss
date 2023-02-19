@@ -1,6 +1,6 @@
 .wrapper_contact {
     width: 100%;
-    height: 500px;
+    height: 50rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -9,8 +9,8 @@
         color: #fff;
     }
     svg {
-        font-size: 32px;
-        margin: 12px;
+        font-size: 3.2rem;
+        margin: 1.2rem;
         --color_hover: #fb2576;
         transition: all 0.2s ease-in-out;
 
@@ -21,15 +21,15 @@
     }
     & > div {
         width: 50%;
-        margin-top: 50px;
+        margin-top: 5rem;
         text-align: center;
 
         & > div {
-            margin-bottom: 12px;
+            margin-bottom: 1.2rem;
 
             span {
-                font-size: 18px;
-                line-height: 24px;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
             }
         }
     }

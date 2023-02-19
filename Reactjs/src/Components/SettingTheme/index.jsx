@@ -4,7 +4,7 @@ import './style.scss';
 import { ThemeApp } from '../../Utils/context';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 
-const SettingTheme = ({ width = '60px', height = '32px' }) => {
+const SettingTheme = ({ width = '6rem', height = '3.2rem' }) => {
     const [theme, setTheme] = useContext(ThemeApp);
 
     return (

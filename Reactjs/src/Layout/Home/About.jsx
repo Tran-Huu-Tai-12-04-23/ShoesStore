@@ -79,8 +79,8 @@ const About = () => {
                     key={uuid()}
                     style={{
                         color: 'yellow',
-                        fontSize: '18px',
-                        transform: 'translate(-12px, -1px)',
+                        fontSize: '1.8rem',
+                        transform: 'translate(-, -1px)',
                     }}
                 ></AiFillStar>
             );
@@ -109,7 +109,8 @@ const About = () => {
                             borderRadius: 'calc(3 * var(--primary_border_radius)',
                             color: '#Fff',
                             marginTop: '20%',
-                            padding: '0 12px',
+                            padding: '0 ',
+                            padding: '0 1.2rem ',
                         }}
                     ></Button>
                     <h1
@@ -120,7 +121,7 @@ const About = () => {
                         Grab unique style of the future
                     </h1>
                     <span>Step into serious comfort with the Tree Runner</span>
-                    <div style={{}}>
+                    <div className="w-50 d-flex justify-content-between" style={{}}>
                         <Button
                             nameButton="Start With ?"
                             width="unset"
@@ -130,9 +131,9 @@ const About = () => {
                                 margin: 0,
                                 color: '#fff',
                                 marginTop: '10%',
-                                marginRight: '12px',
-                                padding: '0 12px',
-                                minWidth: '150px',
+                                marginRight: '',
+                                padding: '0 ',
+                                minWidth: '15rem',
                             }}
                         ></Button>
                         <Button
@@ -146,7 +147,7 @@ const About = () => {
                                 color: '#fff',
                                 marginTop: '10%',
                                 border: `1px outset  ${theme.button_primary}`,
-                                minWidth: '150px',
+                                minWidth: '15rem',
                             }}
                         ></Button>
                     </div>
@@ -167,7 +168,7 @@ const About = () => {
                 <div
                     className="col-lg-2 col-md-3 col-7"
                     style={{
-                        height: '140px',
+                        height: '14rem',
                         textAlign: 'center',
                     }}
                 >
@@ -185,7 +186,7 @@ const About = () => {
                         style={{
                             width: 'max-content',
                             height: '20%',
-                            marginTop: '12px',
+                            marginTop: '',
                             display: 'flex',
                             justifyContent: 'center',
                             flexDirection: 'column',
@@ -202,15 +203,15 @@ const About = () => {
                         <div
                             className="col-12"
                             style={{
-                                marginTop: '6px',
+                                marginTop: '.6rem',
                             }}
                         >
                             {renderStarFeedback()}
                             <span
                                 style={{
                                     color: '#ccc',
-                                    fontSize: '12px',
-                                    height: '40px',
+                                    fontSize: '',
+                                    height: '4rem',
                                 }}
                             >
                                 +128.800 Review

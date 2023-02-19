@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
+import { motion } from 'framer-motion';
 
 import './style.scss';
 import { ThemeApp } from '../../Utils/context';
@@ -9,6 +10,7 @@ import Button from '../../Components/Button';
 import { FaOpencart } from 'react-icons/fa';
 import { BsArrowLeft } from 'react-icons/bs';
 import { SiVirustotal } from 'react-icons/si';
+import { IoBagCheck } from 'react-icons/io5';
 import { MdPayments } from 'react-icons/md';
 import ItemStore from './ItemStore';
 import InputText from '../../Components/InputText';
@@ -16,6 +18,7 @@ import StepCheckOut from './StepCheckOut';
 
 const Store = () => {
     const [theme, setTheme] = useContext(ThemeApp);
+    const [showOrder, setShowOrder] = useState(false);
     const [cartItems, setCartItems] = useState([
         {
             id: uuid(),
@@ -78,13 +81,13 @@ const Store = () => {
     const renderItem = () => {
         return cartItems.map((item) => {
             return (
-                <div className="container-fluid " key={item.id}>
+                <div className="container-fluid p-sm-custom-0 p-2 " key={item.id}>
                     <ItemStore
                         backgroundColorCustom={theme.secondBackgroundColor}
                         data={item}
                         styleCustom={{
                             borderRadius: 'var(--primary_border_radius)',
-                            marginBottom: '24px',
+                            marginBottom: '2.4rem',
                         }}
                         colorCustom={theme.color}
                     />
@@ -95,34 +98,34 @@ const Store = () => {
 
     return (
         <>
-            <div className="container-fluid  " style={{ overflow: 'hidden', height: '100vh' }}>
+            <div className="container-fluid  " style={{ height: '100vh' }}>
                 <div
-                    className="row d-flex justify-content-between "
+                    className={`row d-flex justify-content-${showOrder ? 'between' : 'center'} `}
                     style={{
                         color: theme.color,
                     }}
                 >
                     <div
-                        className="col-lg-12 col-xl-12"
+                        className="col-lg-12 col-xl-12 "
                         style={{
                             height: 'calc(var(--height_header)/2)',
                             backgroundColor: theme.thirdBackgroundColor,
                         }}
                     ></div>
 
-                    <div className="col-lg-8 col-xl-8">
+                    <div className="col-lg-8 col-xl-8 col-md-12 col-sm-12 p-0">
                         <div className="container-fluid">
                             <div className="row">
                                 <div
                                     className="col-lg-12 col-xl-12 m-3 "
                                     style={{
-                                        fontSize: '24px',
+                                        fontSize: '2.4rem',
                                     }}
                                 >
                                     <FaOpencart
                                         style={{
-                                            fontSize: '32px',
-                                            marginRight: '12px',
+                                            fontSize: '3.2rem',
+                                            marginRight: '1.2rem',
                                         }}
                                     />
                                     <span>Your shopping Cart</span>
@@ -138,41 +141,77 @@ const Store = () => {
                                 >
                                     {renderItem()}
                                 </div>
-                                <div className="col-lg-12 col-xl-12 mt-4 d-flex justify-content-between">
-                                    <Button
-                                        nameButton="Back to shop"
-                                        icon={<BsArrowLeft />}
-                                        width="150px"
-                                        addStyleCustom={{
-                                            color: theme.color,
-                                            borderRadius: 'var(--primary_border_radius)',
-                                        }}
-                                    />
-                                    <div className="d-flex align-items-center">
+                                <div className="col-lg-12 col-xl-12 mt-4 d-flex justify-content-between flex-wrap">
+                                    <div className="w-50">
                                         <Button
-                                            nameButton="Totals : "
-                                            icon={<SiVirustotal />}
+                                            nameButton="Back to shop"
+                                            icon={<BsArrowLeft />}
                                             width="150px"
                                             addStyleCustom={{
                                                 color: theme.color,
+                                                borderRadius: 'var(--primary_border_radius)',
                                             }}
-                                            disable={true}
+                                            to="/"
                                         />
-                                        <span
-                                            style={{
-                                                color: '#FF8B13',
+                                    </div>
+                                    <div className="w-25 w-sm-custom-50">
+                                        <div className="d-flex align-items-center">
+                                            <Button
+                                                nameButton="Totals : "
+                                                icon={<SiVirustotal />}
+                                                width="150px"
+                                                addStyleCustom={{
+                                                    color: theme.color,
+                                                }}
+                                                disable={true}
+                                            />
+                                            <span
+                                                style={{
+                                                    color: '#FF8B13',
+                                                }}
+                                            >
+                                                $
+                                            </span>
+                                            <span>200</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="w-25 w-sm-custom-50"
+                                        style={{
+                                            margin: '0 auto',
+                                        }}
+                                    >
+                                        <Button
+                                            nameButton="Check Out"
+                                            backgroundColorCustom={'#E90064'}
+                                            addStyleCustom={{
+                                                color: '#fff',
+                                                borderRadius: 'var(--primary_border_radius)',
+                                                display: !showOrder ? 'flex' : 'none',
+                                                margin: '0 auto',
                                             }}
-                                        >
-                                            $
-                                        </span>
-                                        <span>200</span>
+                                            icon={
+                                                <IoBagCheck
+                                                    style={{
+                                                        fontSize: '3.2rem',
+                                                    }}
+                                                />
+                                            }
+                                            positionIcon="left"
+                                            width="100%"
+                                            action={(e) => setShowOrder(true)}
+                                        ></Button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <StepCheckOut theme={theme} color={theme.color} />
+                    <StepCheckOut
+                        setShowOrder={setShowOrder}
+                        theme={theme}
+                        color={theme.color}
+                        display={showOrder ? 'block' : 'none'}
+                    />
                 </div>
             </div>
         </>

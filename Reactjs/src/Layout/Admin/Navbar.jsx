@@ -48,7 +48,7 @@ const Navbar = ({ width, dataOf, setDataOf = (e) => {}, layout, setLayout = (e) 
                     {navSetting[key].icon}
                     <span
                         style={{
-                            marginLeft: '12px',
+                            marginLeft: '1.2rem',
                         }}
                     >
                         {navSetting[key].name}
@@ -81,7 +81,7 @@ const Navbar = ({ width, dataOf, setDataOf = (e) => {}, layout, setLayout = (e) 
                 <div
                     className={'action_setting'}
                     style={{
-                        padding: '12px 0',
+                        padding: '1.2rem 0',
                         display: 'inline-block',
                     }}
                 >
@@ -91,7 +91,7 @@ const Navbar = ({ width, dataOf, setDataOf = (e) => {}, layout, setLayout = (e) 
                             color: '#ccc',
                             alignItems: 'center',
                             '--color_hover': theme.color,
-                            marginLeft: '12px',
+                            marginLeft: '1.2rem',
                         }}
                     >
                         <div className={'drop_menu'}>
@@ -109,7 +109,7 @@ const Navbar = ({ width, dataOf, setDataOf = (e) => {}, layout, setLayout = (e) 
                                 style={{
                                     fontSize: 24,
                                     display: layout ? 'none' : 'inline-block',
-                                    transform: 'translateY(-2px)',
+                                    transform: 'translateY(-.2rem)',
                                 }}
                             />
                             <select
@@ -117,7 +117,7 @@ const Navbar = ({ width, dataOf, setDataOf = (e) => {}, layout, setLayout = (e) 
                                 className={'wrapper_choose_type_show_data'}
                                 style={{
                                     color: theme.color,
-                                    padding: '4 12px',
+                                    padding: '4 1.2rem',
                                 }}
                             >
                                 <option

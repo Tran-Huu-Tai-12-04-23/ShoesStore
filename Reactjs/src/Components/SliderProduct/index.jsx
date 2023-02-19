@@ -102,7 +102,7 @@ const SliderProduct = () => {
             className="container-fluid px-4 wrapper_category_home"
             style={{
                 color: theme.color,
-                marginTop: '50px',
+                marginTop: '5rem',
                 position: 'relative',
                 backgroundColor: theme.secondBackgroundColor,
                 height: 480,

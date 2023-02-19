@@ -31,9 +31,9 @@ const FilterProduct = ({
                     key={uuid()}
                     style={{
                         color: it.id === type ? '#e90064' : theme.color,
-                        fontSize: '14px',
+                        fontSize: '1.4rem',
                         margin: 0,
-                        padding: '4px 12px',
+                        padding: '.4rem 1.2rem',
                     }}
                     onClick={(e) => {
                         setType(it.id);
@@ -51,7 +51,7 @@ const FilterProduct = ({
                     key={uuid()}
                     style={{
                         width: '100%',
-                        fontSize: '14px',
+                        fontSize: '1.4rem',
                     }}
                 >
                     <Button
@@ -82,7 +82,7 @@ const FilterProduct = ({
             <div
                 className="wrapper_select_gender mb-2"
                 style={{
-                    fontSize: '14px',
+                    fontSize: '1.4rem',
                 }}
             >
                 <label>
@@ -119,9 +119,9 @@ const FilterProduct = ({
             <div className="wrapper_select_price">
                 <h1
                     style={{
-                        marginLeft: '12px',
-                        marginBottom: '12px',
-                        margin: '12px',
+                        marginLeft: '1.2rem',
+                        marginBottom: '1.2rem',
+                        margin: '1.2rem',
                     }}
                 >
                     Price
@@ -144,11 +144,11 @@ const FilterProduct = ({
                     addStyleCustom={{
                         color: theme.color,
                         margin: '0 auto',
-                        borderRadius: '30px',
-                        marginBottom: '12px',
+                        borderRadius: '3rem',
+                        marginBottom: '1.2',
                         backgroundColor: theme.secondBackgroundColor,
                     }}
-                    height="30px"
+                    height="3rem"
                     action={(e) => {
                         setDataFilter((prev) => {
                             return { gender, typeShoes: type, rangePrice };

@@ -61,10 +61,10 @@ const Category = () => {
             className="row g-0 wrapper_category_home"
             style={{
                 color: theme.color,
-                marginTop: '50px',
+                marginTop: '5rem',
                 position: 'relative',
                 backgroundColor: theme.secondBackgroundColor,
-                padding: '0 0 24px 0',
+                padding: '0 0 2.4rem 0',
             }}
         >
             <h1
@@ -72,8 +72,8 @@ const Category = () => {
                     textAlign: 'center',
                     color: theme.color,
                     textTransform: 'uppercase',
-                    fontSize: '24px',
-                    marginTop: '40px',
+                    fontSize: '2.4rem',
+                    marginTop: '4rem',
                 }}
             >
                 Shop By Category

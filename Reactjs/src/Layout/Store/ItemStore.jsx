@@ -22,8 +22,8 @@ const ItemStore = ({ data, action, backgroundColorCustom, styleCustom = {}, colo
                         className="image_item_store"
                         src={data.linkImage}
                         style={{
-                            width: '100px',
-                            height: '100px',
+                            width: '8rem',
+                            height: '8rem',
                             border: '1px solid #ccc',
                             borderRadius: '50%',
                         }}
@@ -32,7 +32,7 @@ const ItemStore = ({ data, action, backgroundColorCustom, styleCustom = {}, colo
                         <h6>{data.name}</h6>
                         <label
                             style={{
-                                fontSize: '14px ',
+                                fontSize: '1.4rem ',
                                 color: '#ccc',
                             }}
                         >

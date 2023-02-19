@@ -1,9 +1,9 @@
 .button {
     border: none;
     outline: none;
-    padding: 12px;
+    padding: 1.2rem;
     background-color: transparent;
-    min-width: 60px;
+    min-width: 6rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -13,5 +13,6 @@
         filter: brightness(130%);
         cursor: pointer;
         background-color: var(--hover_background_color) !important;
+        color: var(--color_hover) !important;
     }
 }

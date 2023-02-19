@@ -5,9 +5,19 @@ html,
 * {
     font-family: 'roboto', 'sans-serif';
     user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 span {
 }
+table {
+    border-collapse: collapse; /* gộp các viền cell giống nhau */
+    width: 100%;
+    padding: 24px;
+}
+
 body {
     overflow-x: hidden;
 
@@ -117,7 +127,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
 }
@@ -175,6 +184,10 @@ html {
     --second_color_dark: #ccc;
     --height_header: 60px;
     --button_edit: #1c82ad;
+    --font_size_heading: 3.2rem;
+    --font_size_sub_heading: 2.4rem;
+    --font_size_text: 2rem;
+    --height_button: 4rem;
 }
 a {
     text-decoration: none;
@@ -195,4 +208,27 @@ textarea {
     &::-webkit-scrollbar {
         display: none;
     }
+}
+tr,
+td {
+    padding: 24px; /* tăng khoảng cách giữa các hàng trong bảng */
+    border: 1px solid #ddd; /* tạo đường viền cho các cell */
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+button,
+div,
+label,
+span,
+h5,
+h6,
+li {
+    font-size: 1.4rem;
 }
