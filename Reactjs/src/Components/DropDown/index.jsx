@@ -111,27 +111,31 @@ const DropDown = ({
             setDataList(newListData);
         } else if (type === 'd') {
             let newListData = [];
-            console.log(codeP);
             const dataNew = data.find((it) => it.code === codeP);
-            await dataNew.districts.map((dis) => {
-                newListData.push({
-                    name: dis.name,
-                    codeD: dis.code,
+            if( dataNew ) {
+                await dataNew.districts.map((dis) => {
+                    newListData.push({
+                        name: dis.name,
+                        codeD: dis.code,
+                    });
                 });
-            });
+            }
 
             setDataList(newListData);
         } else if (type === 'w') {
             let newListData = [];
-            console.log(codeD);
             const dataNew = data.find((it) => it.code === codeP);
-            const dataNew2 = dataNew.districts.find((dis) => dis.code === codeD);
-            await dataNew2.wards.map((ward) => {
-                newListData.push({
-                    name: ward.name,
-                    codeW: ward.code,
-                });
-            });
+            if( dataNew) {
+                const dataNew2 = dataNew.districts.find((dis) => dis.code === codeD);
+                if( dataNew2 ) {
+                    await dataNew2.wards.map((ward) => {
+                        newListData.push({
+                            name: ward.name,
+                            codeW: ward.code,
+                        });
+                    });
+                }
+            }
 
             setDataList(newListData);
         }

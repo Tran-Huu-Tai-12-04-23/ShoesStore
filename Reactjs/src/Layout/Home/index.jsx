@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useRef } from 'react';
+import { useContext, useEffect, useState, useRef, memo } from 'react';
 import './style.scss';
 
 import { ThemeApp } from '../../Utils/context';
@@ -13,7 +13,6 @@ import Contact from '../../Components/Contact';
 const Home = () => {
     const [theme, setTheme] = useContext(ThemeApp);
     const [typeProductActive, setTypeProductActive] = useState('');
-
     return (
         <>
             <div className="container wrapper_home">
@@ -35,7 +34,7 @@ const Home = () => {
                     height: 'calc(100vh - var(--height_header))',
                 }}
             >
-                <Poster />
+                <Poster /> 
                 <Category />
                 <SliderProduct />
                 <Help />
@@ -45,4 +44,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default memo(Home);

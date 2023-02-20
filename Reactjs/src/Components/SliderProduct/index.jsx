@@ -13,7 +13,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const SliderProduct = () => {
     const [theme, setTheme] = useContext(ThemeApp);
     const listItems = useRef();
-    const [itemActive, setItemActive] = useState(0);
+    const [classNameAnimation, setClassAnimation] = useState('active_flex_left')    
     const [product, setProduct] = useState([
         {
             id: uuid(),
@@ -62,16 +62,24 @@ const SliderProduct = () => {
         },
     ]);
 
-    const handleShowNextItem = (flag) => {
-        if (listItems && listItems.current) {
-            const items = listItems.current.querySelectorAll('.item');
-            listItems.current.appendChild(items[0]);
+    const [itemActive, setItemActive] = useState(Math.round(product.length / 2));
+
+    const handleShowNextItem = () => {
+        setClassAnimation('active_flex_left');
+        if( itemActive >= product.length -2  ) {
+            setItemActive(1)
+        }
+        else{
+            setItemActive( prev => prev + 1 )
         }
     };
-    const handleShowPrevItem = (flag) => {
-        if (listItems && listItems.current) {
-            const items = listItems.current.querySelectorAll('.item');
-            listItems.current.prepend(items[items.length - 1]);
+    const handleShowPrevItem = () => {
+        setClassAnimation('active_flex_right');
+        if( itemActive <= 1 ) {
+            setItemActive(product.length - 2);
+        }
+        else{
+            setItemActive( prev => prev - 1);
         }
     };
     const renderProduct = () => {
@@ -79,16 +87,18 @@ const SliderProduct = () => {
             return (
                 <div
                     className={`item_slide_product col-2 col-md-3 col-lg-6 col-xl-6 flex-wrap justify-content-evenly ${
-                        itemActive === index ? 'active_flex' : ''
-                    }   ${itemActive - 1 === index ? 'hidden' : ''}`}
+                        itemActive === index ?  `${classNameAnimation}`:''
+                    }   ${itemActive - 1 === index ? 'hidden_left' : ''}
+                    ${itemActive + 1 === index ? 'hidden_right' : ''}
+                    `}
                     key={uuid()}
                     style={{
                         position: 'absolute',
                         top: '50%',
                         right: `50%`,
-
                         background: 'rgba(255, 255, 255,.1)',
-                        backdropFilter: 'blur(20px)',
+                        backdropFilter: 'blur(100px)',
+                        boxShadow: '5px 5px 15px 5px #000000'
                     }}
                 >
                     <div className="tag_sale">Sale</div>
@@ -125,10 +135,11 @@ const SliderProduct = () => {
             className="container-fluid px-4 wrapper_category_home"
             style={{
                 color: theme.color,
-                marginTop: '5rem',
+                paddingTop: '10rem',
+                paddingBottom: '10rem',
                 position: 'relative',
                 backgroundColor: theme.secondBackgroundColor,
-                height: '48rem',
+                height: '60rem',
                 overflow: 'hidden',
             }}
         >

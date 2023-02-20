@@ -317,7 +317,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                             '--color_cart': theme.colorActive,
                         }}
                     >
-                        <div className="icon_cart_home_header">
+                        <h5 className="icon_cart_home_header">
                             <AiOutlineShoppingCart
                                 onClick={(e) => {
                                     e.preventDefault();
@@ -325,9 +325,12 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                     setShowCart(!showCart);
                                 }}
                             />
-                        </div>
+                        </h5>
 
-                        <Menu
+                        
+                        <span className="number_cart_header">1</span>
+                    </Link>
+                    <Menu
                             display={showCart}
                             // height="30vh"
                             classNameMenu="cart_store"
@@ -397,8 +400,6 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                                 ></Button>
                             </div>
                         </Menu>
-                        <span className="number_cart_header">1</span>
-                    </Link>
                     {isLogging && (
                         <div
                             style={{

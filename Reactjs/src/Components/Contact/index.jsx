@@ -18,7 +18,7 @@ const Contact = () => {
             className="row g-0 wrapper_contact"
             style={{
                 color: theme.color,
-                marginTop: '5rem',
+                paddingTop: '5rem',
                 position: 'relative',
                 background: theme.secondBackgroundColor,
             }}

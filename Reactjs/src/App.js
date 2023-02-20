@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef , useCallback, memo} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Admin from './Layout/Admin';
@@ -35,20 +35,29 @@ function App() {
               },
     );
     const app = useRef();
-    const [heightScroll, setHeightScroll] = useState(0);
-    const handleScroll = (e) => {
-        setHeightScroll(e.target.scrollTop);
-    };
-
+    const [showToTop, setShowToTop] = useState(false);
+    
+    useEffect(() => {
+       const handleScroll= () => {
+            if( window.scrollY > 200) {
+                setShowToTop(true);
+            }
+            else{
+                setShowToTop(false);
+            }
+       }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
     return (
         <ThemeApp.Provider value={[theme, setTheme]}>
             <div
                 className="app_main"
-                onScroll={handleScroll}
                 ref={app}
                 style={{
                     backgroundColor: theme.backgroundColor,
-                    overflowX: 'hidden',
                     height: '100vh',
                 }}
             >
@@ -67,25 +76,22 @@ function App() {
                     className="action_move_top"
                     style={{
                         '--hover_background_color': theme.secondBackgroundColor,
-                        display: heightScroll >= 200 ? 'flex' : 'none',
+                        display: showToTop ? 'flex' : 'none',
                     }}
                     onClick={(e) => {
-                        setHeightScroll(0);
-                        if (app.current && app) {
-                            app.current.scroll({
-                                top: 0,
-                                left: 0,
-                                behavior: 'smooth',
-                            });
-                        }
+                        setShowToTop(false);
+                        window.scroll({
+                            top: 0,
+                            left: 0,
+                            behavior: 'smooth',
+                        });
                     }}
                 >
                     <FcUpload />
-                    <span>Move Top</span>
                 </div>
             </div>
         </ThemeApp.Provider>
     );
 }
 
-export default App;
+export default memo(App);

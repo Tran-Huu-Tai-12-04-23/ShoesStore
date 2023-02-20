@@ -14,9 +14,10 @@ const Help = () => {
         <div
             className="row g-0 wrapper_help_home"
             style={{
+                height: '50rem',
                 color: theme.color,
-                marginTop: '5rem',
                 position: 'relative',
+                backgroundColor: theme.backgroundColor
             }}
         >
             <img src={helpImage}></img>

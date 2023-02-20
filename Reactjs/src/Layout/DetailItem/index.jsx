@@ -17,7 +17,6 @@ import SliderProduct from '../../Components/SliderProduct';
 const DisplayProduct = ({ typeProductActive = 'All' }) => {
     const [theme, setTheme] = useContext(ThemeApp);
     const [size, setSize] = useState('41');
-
     return (
         <>
             <div className="container-fluid">

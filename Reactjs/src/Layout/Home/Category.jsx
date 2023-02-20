@@ -61,7 +61,7 @@ const Category = () => {
             className="row g-0 wrapper_category_home"
             style={{
                 color: theme.color,
-                marginTop: '5rem',
+                paddingTop: '5rem',
                 position: 'relative',
                 backgroundColor: theme.secondBackgroundColor,
                 padding: '0 0 2.4rem 0',
