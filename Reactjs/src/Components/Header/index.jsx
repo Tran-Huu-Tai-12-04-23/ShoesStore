@@ -317,14 +317,7 @@ const Header = ({ typeProductActive = '', setTypeProductActive = () => {}, nav }
                             '--color_cart': theme.colorActive,
                         }}
                     >
-                        <div
-                            className="icon_cart_home_header"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                e.preventDefault();
-                                setShowCart(!showCart);
-                            }}
-                        >
+                        <div className="icon_cart_home_header">
                             <AiOutlineShoppingCart
                                 onClick={(e) => {
                                     e.preventDefault();

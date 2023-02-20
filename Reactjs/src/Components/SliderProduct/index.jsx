@@ -13,6 +13,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const SliderProduct = () => {
     const [theme, setTheme] = useContext(ThemeApp);
     const listItems = useRef();
+    const [itemActive, setItemActive] = useState(0);
     const [product, setProduct] = useState([
         {
             id: uuid(),
@@ -74,12 +75,32 @@ const SliderProduct = () => {
         }
     };
     const renderProduct = () => {
-        return product.map((item) => {
+        return product.map((item, index) => {
             return (
-                <div className="item col-2 col-md-3 col-lg-1" key={uuid()}>
+                <div
+                    className={`item_slide_product col-2 col-md-3 col-lg-6 col-xl-6 flex-wrap justify-content-evenly ${
+                        itemActive === index ? 'active_flex' : ''
+                    }   ${itemActive - 1 === index ? 'hidden' : ''}`}
+                    key={uuid()}
+                    style={{
+                        position: 'absolute',
+                        top: '50%',
+                        right: `50%`,
+
+                        background: 'rgba(255, 255, 255,.1)',
+                        backdropFilter: 'blur(20px)',
+                    }}
+                >
                     <div className="tag_sale">Sale</div>
-                    <img src={item.linkImage}></img>
-                    <div className="info_item">
+                    <div className="w-50 d-flex justify-content-center">
+                        <img src={item.linkImage}></img>
+                    </div>
+                    <div
+                        className="info_item w-50 "
+                        style={{
+                            margin: '0 auto',
+                        }}
+                    >
                         <h1>{item.name}</h1>
                         <span>{item.price}</span>
                     </div>
@@ -91,6 +112,8 @@ const SliderProduct = () => {
                             color: '#fff',
                             borderRadius: 'var(--primary_border_radius)',
                         }}
+                        width="200px"
+                        to="/store"
                     ></Button>
                 </div>
             );
@@ -105,13 +128,21 @@ const SliderProduct = () => {
                 marginTop: '5rem',
                 position: 'relative',
                 backgroundColor: theme.secondBackgroundColor,
-                height: 480,
+                height: '48rem',
                 overflow: 'hidden',
             }}
         >
             <IoIosArrowBack className="icon_back" onClick={(e) => handleShowNextItem()} />
             <IoIosArrowForward className="icon_next" onClick={(e) => handleShowPrevItem()} />
-            <div ref={listItems} className="row wrapper_slider_show_product">
+            <div
+                ref={listItems}
+                className="row wrapper_slider_show_product"
+                style={{
+                    position: 'relative',
+                    width: '100vw',
+                    height: '100%',
+                }}
+            >
                 {renderProduct()}
             </div>
         </div>

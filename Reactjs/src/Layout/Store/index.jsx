@@ -103,6 +103,7 @@ const Store = () => {
                     className={`row d-flex justify-content-${showOrder ? 'between' : 'center'} `}
                     style={{
                         color: theme.color,
+                        position: 'relative',
                     }}
                 >
                     <div
@@ -179,6 +180,7 @@ const Store = () => {
                                         className="w-25 w-sm-custom-50"
                                         style={{
                                             margin: '0 auto',
+                                            display: !showOrder ? 'flex' : 'none',
                                         }}
                                     >
                                         <Button

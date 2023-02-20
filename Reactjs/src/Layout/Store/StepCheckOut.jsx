@@ -29,7 +29,7 @@ const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
     const steps = [
         <>
             <div
-                className="h-75 d-flex flex-column align-items-center"
+                className="h-75 d-flex flex-column align-items-center "
                 style={{
                     color: theme.color,
                 }}
@@ -599,7 +599,9 @@ const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
                         }}
                     />
                 }
-                action={(e) => setIndexStep((prev) => prev + 1)}
+                action={(e) => {
+                    setIndexStep((prev) => prev + 1);
+                }}
             />
         </>,
         <div
@@ -626,6 +628,14 @@ const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
         </div>,
     ];
 
+    useEffect(() => {
+        setTimeout(() => {
+            if (indexStep === 5) {
+                setIndexStep(0);
+                setShowOrder(false);
+            }
+        }, 3000);
+    }, [indexStep]);
     const renderStep = () => {
         return steps[indexStep];
     };
@@ -643,10 +653,14 @@ const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
             );
         });
     };
+
     return (
         <div
-            className="col-lg-3 col-xl-3 "
+            className="col-lg-3 col-xl-3 position-md-custom-absolute"
             style={{
+                top: 0,
+                left: 0,
+                right: 0,
                 backgroundColor: theme.thirdBackgroundColor,
                 height: '100vh',
                 position: 'relative',

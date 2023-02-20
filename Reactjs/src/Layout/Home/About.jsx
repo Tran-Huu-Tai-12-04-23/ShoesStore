@@ -121,7 +121,7 @@ const About = () => {
                         Grab unique style of the future
                     </h1>
                     <span>Step into serious comfort with the Tree Runner</span>
-                    <div className="w-50 d-flex justify-content-between" style={{}}>
+                    <div className="w-50  d-flex justify-content-between" style={{}}>
                         <Button
                             nameButton="Start With ?"
                             width="unset"

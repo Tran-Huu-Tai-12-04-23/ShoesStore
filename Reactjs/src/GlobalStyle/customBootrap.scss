@@ -1,3 +1,25 @@
+.active_flex {
+    display: flex !important;
+    animation: activeItem 1.3s ease-in-out 1 forwards;
+}
+@keyframes activeItem {
+    0% {
+        opacity: 0;
+        transform: translate(120%, -50%);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(100%, -50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(50%, -50%);
+    }
+}
+.hidden {
+    opacity: 0.5;
+}
+
 @media screen and (min-width: 1140px) {
     // xl
     .w-xl-83 {
@@ -28,7 +50,12 @@
 
 @media (min-width: 720px) and (max-width: 959px) {
     //md
-
+    .position-md-custom-fixed {
+        position: fixed !important;
+    }
+    .position-md-custom-absolute {
+        position: absolute !important;
+    }
     .w-md-100 {
         width: 100%;
     }
