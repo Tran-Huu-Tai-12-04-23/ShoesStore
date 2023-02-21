@@ -1,37 +1,37 @@
 .input_text {
+  position: relative;
+  width: var(--width_input);
+  // animation: renderColorInput 0.5s linear;
+  input {
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.4rem;
+    outline: none;
+    background-color: transparent;
+    height: 100%;
     position: relative;
-    width: var(--width_input);
-    // animation: renderColorInput 0.5s linear;
-    transition: all 0.4s linear;
-    input {
-        border: none;
-        padding: 0.6rem 1.2rem;
-        font-size: 1.4rem;
-        outline: none;
-        background-color: transparent;
-        height: 100%;
-        position: relative;
-    }
-    input:focus + label {
-        top: -30%;
-        left: 0;
-        color: var(--color_label);
-    }
-    input:not(:placeholder-shown) + label {
-        top: -30%;
-        left: 0;
-        color: var(--color_label);
-    }
+  }
+  input:focus + label {
+    top: -30%;
+    left: 0;
+    color: var(--color_label);
+  }
+  input:not(:placeholder-shown) + label {
+    top: -30%;
+    left: 0;
+    color: var(--color_label);
+  }
 
-    label {
-        position: absolute;
-        top: 50%;
-        left: 4%;
-        transform: translateY(-50%);
-        text-transform: capitalize;
-        color: #ccc;
-    }
+  label {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    text-transform: capitalize;
+    color: #ccc;
+    transition: all 0.2s ease-in-out;
+  }
 
-    span {
-    }
+  span {
+  }
 }
