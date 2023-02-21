@@ -460,7 +460,7 @@ const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
                         width="100%"
                         height="5rem"
                         labelInput={'Card Number'}
-                        handleOnchange={(e) => setCardNumber(e.target.value)}
+                        onChange={(e) => setCardNumber(e.target.value)}
                     ></InputText>
                     <div className="d-flex justify-content-between align-items-center ">
                         <InputText
@@ -480,7 +480,7 @@ const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
                             width="60%"
                             height="5rem"
                             labelInput={'Expire Day '}
-                            handleOnchange={(e) => setExpireDay(e.target.value)}
+                            onChange={(e) => setExpireDay(e.target.value)}
                         ></InputText>
                         <InputText
                             value={CVV}
@@ -499,7 +499,7 @@ const StepCheckOut = ({ theme, display = 'block', setShowOrder }) => {
                             width="25%"
                             height="5rem"
                             labelInput={'CVV'}
-                            handleOnchange={(e) => setCVV(e.target.value)}
+                            onChange={(e) => setCVV(e.target.value)}
                         ></InputText>
                     </div>
                 </div>

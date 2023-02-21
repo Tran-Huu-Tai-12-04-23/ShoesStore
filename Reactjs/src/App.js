@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef , useCallback, memo} from 'react';
+import { useState, useEffect, useRef, useCallback, memo } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Admin from './Layout/Admin';
@@ -11,6 +11,7 @@ import Store from './Layout/Store';
 import { ThemeApp } from './Utils/context';
 
 import { FcUpload } from 'react-icons/fc';
+import PostNewItem from './Layout/PostNewItem';
 
 function App() {
     const [theme, setTheme] = useState(
@@ -36,21 +37,20 @@ function App() {
     );
     const app = useRef();
     const [showToTop, setShowToTop] = useState(false);
-    
+
     useEffect(() => {
-       const handleScroll= () => {
-            if( window.scrollY > 200) {
+        const handleScroll = () => {
+            if (window.scrollY > 200) {
                 setShowToTop(true);
-            }
-            else{
+            } else {
                 setShowToTop(false);
             }
-       }
+        };
         window.addEventListener('scroll', handleScroll);
         return () => {
-          window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
-      }, []);
+    }, []);
     return (
         <ThemeApp.Provider value={[theme, setTheme]}>
             <div
@@ -68,6 +68,7 @@ function App() {
                         <Route path="/admin" element={<Admin />}></Route>
                         <Route path="/products" element={<ShowProduct />}></Route>
                         <Route path="/detail-item" element={<DetailItem />}></Route>
+                        <Route path="/post-new-item" element={<PostNewItem />}></Route>
                         <Route path="/store" element={<Store />}></Route>
                         <Route path="/" element={<Home />}></Route>
                     </Routes>

@@ -1,0 +1,45 @@
+.wrapper_header {
+    padding: 1.2rem 0;
+    width: 100%;
+    height: var(--height_header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 14%;
+}
+.icon_back_home:hover {
+    cursor: pointer;
+    color: #ccc;
+}
+.info_header_sub {
+    font-size: 14px;
+}
+
+.info_header_sub h1 {
+    font-size: 1.2rem;
+}
+.info_header_sub h5 {
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+    color: #ccc;
+}
+.info_header svg {
+    font-size: 3.2rem;
+    color: #fff;
+}
+
+.wrapper_info {
+    width: 14%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+.wrapper_info svg {
+    font-size: 3.2rem;
+}

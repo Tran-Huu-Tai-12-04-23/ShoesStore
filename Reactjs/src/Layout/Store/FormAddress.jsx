@@ -61,7 +61,7 @@ const FormAddress = ({
                 width="100%"
                 height="5rem"
                 labelInput={'Name '}
-                handleOnchange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
             ></InputText>
             <InputText
                 value={number}
@@ -80,7 +80,7 @@ const FormAddress = ({
                 width="100%"
                 height="5rem"
                 labelInput={'Your Number'}
-                handleOnchange={(e) => setNumber(e.target.value)}
+                onChange={(e) => setNumber(e.target.value)}
             ></InputText>
             <DropDown
                 nameInput="Province / City"
@@ -131,7 +131,7 @@ const FormAddress = ({
                 width="100%"
                 height="5rem"
                 labelInput={'Detail address'}
-                handleOnchange={(e) => setDetail(e.target.value)}
+                onChange={(e) => setDetail(e.target.value)}
             ></InputText>
         </div>
     );

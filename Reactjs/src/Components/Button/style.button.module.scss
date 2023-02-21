@@ -1,18 +1,17 @@
 .button {
-  border: none;
-  outline: none;
-  padding: 1.2rem;
-  background-color: transparent;
-  min-width: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  --hover_background_color: #243763;
+    border: none;
+    outline: none;
+    padding: 1.2rem;
+    background-color: transparent;
+    min-width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    --hover_background_color: #243763;
 
-  &:hover {
-    filter: brightness(130%);
-    cursor: pointer;
-    background-color: var(--hover_background_color) !important;
-    color: var(--hover_color) !important;
-  }
+    &:hover {
+        cursor: pointer;
+        background-color: var(--hover_background_color) !important;
+        color: var(--hover_color) !important;
+    }
 }

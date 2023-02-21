@@ -1,51 +1,45 @@
-@import url("https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight");
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight');
 
 // custom styles bootrap
 html,
 * {
-  font-family: "roboto", "sans-serif";
-  user-select: none;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    font-family: 'mono sp', 'sans-serif';
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 span {
 }
 table {
-  border-collapse: collapse; /* gộp các viền cell giống nhau */
-  width: 100%;
-  padding: 24px;
+    border-collapse: collapse; /* gộp các viền cell giống nhau */
+    width: 100%;
+    padding: 24px;
 }
 
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #f5f5f5;
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar {
-    width: 4px;
-    background-color: #f5f5f5;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #fff;
-    background-image: -webkit-linear-gradient(
-      top,
-      #e4f5fc 0%,
-      #bfe8f9 50%,
-      #9fd8ef 51%,
-      #2ab0ed 100%
-    );
-  }
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        background-color: #f5f5f5;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+        background-color: #f5f5f5;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #fff;
+        background-image: -webkit-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+    }
 }
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
@@ -129,11 +123,11 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -147,85 +141,85 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 body {
-  line-height: 1;
+    line-height: 1;
 }
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+    content: '';
+    content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 html {
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 :root {
-  --space_main: 10%;
-  --primary_background_color_dark: #1e2a31;
-  --secondary_background_color_dark: #2b3942;
-  --primary_background_color_light: #fff;
-  --secondary_background_color_light: #ccc;
-  --primary_border_radius: 0.6rem;
-  --primary_color: #338fff;
-  --primary_color_dark: #fff;
-  --second_color_dark: #ccc;
-  --primary_color_light: #000;
-  --second_color_dark: #ccc;
-  --height_header: 6rem;
-  --button_edit: #1c82ad;
-  --font_size_heading: 3.2rem;
-  --font_size_sub_heading: 2.4rem;
-  --font_size_text: 2rem;
-  --height_button: 4rem;
+    --space_main: 10%;
+    --primary_background_color_dark: #1e2a31;
+    --secondary_background_color_dark: #2b3942;
+    --primary_background_color_light: #fff;
+    --secondary_background_color_light: #ccc;
+    --primary_border_radius: 0.6rem;
+    --primary_color: #338fff;
+    --primary_color_dark: #fff;
+    --second_color_dark: #ccc;
+    --primary_color_light: #000;
+    --second_color_dark: #ccc;
+    --height_header: 6rem;
+    --button_edit: #1c82ad;
+    --font_size_heading: 3.2rem;
+    --font_size_sub_heading: 2.4rem;
+    --font_size_text: 2rem;
+    --height_button: 4rem;
 }
 a {
-  text-decoration: none;
-  color: #000;
+    text-decoration: none;
+    color: #000;
 }
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 textarea::-webkit-scrollbar {
-  display: none;
-}
-textarea {
-  resize: none;
-}
-.app_main {
-  z-index: 1000;
-  &::-webkit-scrollbar {
     display: none;
-  }
+}
+// textarea {
+//     resize: none;
+// }
+.app_main {
+    z-index: 1000;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 tr,
 td {
-  padding: 24px; /* tăng khoảng cách giữa các hàng trong bảng */
-  border: 1px solid #ddd; /* tạo đường viền cho các cell */
+    padding: 24px; /* tăng khoảng cách giữa các hàng trong bảng */
+    border: 1px solid #ddd; /* tạo đường viền cho các cell */
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 h1 {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 button,
@@ -234,7 +228,7 @@ label,
 span,
 h5,
 h6,
-svg,
 li {
-  font-size: 1.4rem;
+    font-family: 'Helvetica', 'sans-serif';
+    font-size: 1.4rem;
 }
