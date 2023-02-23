@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { v4 as uuid } from "uuid";
-import Flip from "react-reveal/Flip";
+import { Slide } from "react-awesome-reveal";
 
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -21,12 +21,10 @@ const Help = () => {
                 background: theme.secondBackgroundColor,
             }}
         >
-            <Flip bottom>
-                <img src={helpImage}></img>
-            </Flip>
+            <img src={helpImage}></img>
             <div>
                 <div>
-                    <Flip left>
+                    <Slide left>
                         <h1
                             style={{
                                 color: "#fff",
@@ -34,14 +32,14 @@ const Help = () => {
                         >
                             Need Help? Check Out Our Help Center
                         </h1>
-                    </Flip>
-                    <Flip bottom>
+                    </Slide>
+                    <Slide bottom delay={500}>
                         <p>
                             I'm a paragraph. Click here to add your own text and
                             edit me. Let your users get to know you.
                         </p>
-                    </Flip>
-                    <Flip bottom>
+                    </Slide>
+                    <Slide bottom delay={1000}>
                         <Button
                             nameButton='Go To Help Center?'
                             backgroundColorCustom={"#751FFF"}
@@ -55,7 +53,7 @@ const Help = () => {
                             height='5rem'
                             width='50%'
                         ></Button>
-                    </Flip>
+                    </Slide>
                 </div>
             </div>
         </div>

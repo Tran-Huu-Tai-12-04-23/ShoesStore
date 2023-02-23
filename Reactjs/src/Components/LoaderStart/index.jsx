@@ -27,7 +27,6 @@ const LoaderStart = ({ show = "false" }) => {
                     loop
                     mode='normal'
                     src='https://assets5.lottiefiles.com/packages/lf20_yGAvcNz3us.json'
-                    hover
                 ></lottie-player>
             </div>
         </div>

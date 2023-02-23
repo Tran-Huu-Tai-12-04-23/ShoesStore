@@ -151,33 +151,24 @@
     & > div:nth-child(1) {
         height: 100%;
     }
+    .hover_button:hover {
+        > button {
+            display: flex !important;
+        }
+    }
     & > div {
-        position: absolute;
-        height: 50%;
-        width: 50%;
+        transition: all 0.4s ease-in-out;
         &:hover {
             cursor: pointer;
         }
-        &:hover::after {
-            display: block;
+        &:hover {
+            opacity: 0.6;
+            backdrop-filter: blur(20px);
         }
-        &:hover > button {
-            display: flex;
-        }
-        &::after {
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                0deg,
-                rgba(57, 71, 187, 0.6) 20%,
-                rgba(171, 80, 189, 0.2) 84%
-            );
-            display: none;
-            animation: watchPoster 0.4s ease-in-out;
+        &:hover button {
+            display: flex !important;
+            position: relative;
+            z-index: 100000;
         }
     }
     div > button {
@@ -390,7 +381,6 @@
             width: 70%;
             display: flex;
             justify-content: flex-start;
-            align-items: center;
             flex-wrap: wrap;
 
             h1 {
@@ -408,7 +398,6 @@
                 line-height: 2.4rem;
             }
             button {
-                margin-top: 6rem;
             }
         }
     }

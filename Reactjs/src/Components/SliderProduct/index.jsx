@@ -1,7 +1,7 @@
 import { useContext, useState, useRef, useEffect, memo } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
-import Slide from "react-reveal/Slide";
+import { Slide } from "react-awesome-reveal";
 import "./style.scss";
 
 import { ThemeApp } from "../../Utils/context";

@@ -1,8 +1,7 @@
 import { useContext, useState } from "react";
 import { v4 as uuid } from "uuid";
 import "./style.scss";
-import LightSpeed from "react-reveal/LightSpeed";
-import Fade from "react-reveal/Fade";
+import { Slide } from "react-awesome-reveal";
 import LottiePlayer from "@lottiefiles/lottie-player";
 
 import avatarDefault from "../../assets/img/Home/avatarDefault.png";
@@ -104,13 +103,13 @@ const About = () => {
                     height: "unset",
                 }}
             >
-                <LightSpeed left>
-                    <div
-                        className='col-lg-6 col-md-12 col-12 detail_info_about '
-                        style={{
-                            color: theme.color,
-                        }}
-                    >
+                <div
+                    className='col-lg-6 col-md-12 col-12 detail_info_about '
+                    style={{
+                        color: theme.color,
+                    }}
+                >
+                    <Slide direction='left'>
                         <Button
                             nameButton='ExClusive Collections'
                             width='unset'
@@ -169,79 +168,82 @@ const About = () => {
                                 }}
                             ></Button>
                         </div>
-                    </div>
-                </LightSpeed>
-                <LightSpeed right>
-                    <div
-                        className='col-lg-6 col-md-12 col-12 poster_shop'
-                        style={{
-                            "--background_color": theme.secondBackgroundColor,
-                        }}
-                    >
+                    </Slide>
+                </div>
+                <div
+                    className='col-lg-6 col-md-12 col-12 poster_shop'
+                    style={{
+                        "--background_color": theme.secondBackgroundColor,
+                    }}
+                >
+                    <Slide direction='right'>
                         <lottie-player
                             autoplay
                             loop
                             mode='normal'
                             src='https://assets2.lottiefiles.com/packages/lf20_t1pL2Z4MIA.json'
                         ></lottie-player>
-                    </div>
-                </LightSpeed>
-                <Fade bottom>
-                    <div
-                        className='col-lg-2 col-md-3 col-7'
-                        style={{
-                            height: "14rem",
-                            textAlign: "center",
-                        }}
-                    >
-                        <div
-                            className='row'
-                            style={{
-                                position: "relative",
-                                height: "50%",
-                            }}
-                        >
-                            <div className='col-12'> {renderFeedback()}</div>
-                        </div>
-                        <div
-                            className='col-12'
-                            style={{
-                                width: "max-content",
-                                height: "20%",
-                                marginTop: "",
-                                display: "flex",
-                                justifyContent: "center",
-                                flexDirection: "column",
-                            }}
-                        >
+                    </Slide>
+                </div>
+                <div
+                    className='col-lg-2 col-md-3 col-7'
+                    style={{
+                        height: "14rem",
+                        textAlign: "center",
+                    }}
+                >
+                    <Slide direction='direction'>
+                        <div className='container'>
                             <div
-                                className='col-12'
+                                className='row'
                                 style={{
-                                    padding: "0",
+                                    position: "relative",
+                                    height: "50%",
+                                    minHeight: "6rem",
                                 }}
                             >
-                                Happy customer
+                                <div className='col-12'>{renderFeedback()}</div>
                             </div>
                             <div
                                 className='col-12'
                                 style={{
-                                    marginTop: ".6rem",
+                                    width: "max-content",
+                                    height: "20%",
+                                    marginTop: "",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    flexDirection: "column",
                                 }}
                             >
-                                {renderStarFeedback()}
-                                <span
+                                <div
+                                    className='col-12'
                                     style={{
-                                        color: "#ccc",
-                                        fontSize: "",
-                                        height: "4rem",
+                                        padding: "0",
                                     }}
                                 >
-                                    +128.800 Review
-                                </span>
+                                    Happy customer
+                                </div>
+                                <div
+                                    className='col-12'
+                                    style={{
+                                        marginTop: ".6rem",
+                                    }}
+                                >
+                                    {renderStarFeedback()}
+                                    <span
+                                        style={{
+                                            color: "#ccc",
+                                            fontSize: "",
+                                            height: "4rem",
+                                        }}
+                                    >
+                                        +128.800 Review
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </Fade>
+                    </Slide>
+                </div>
             </div>
         </div>
     );

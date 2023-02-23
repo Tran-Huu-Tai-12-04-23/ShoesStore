@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { v4 as uuid } from "uuid";
-import Flip from "react-reveal/Slide";
-import Jump from "react-reveal/Jump";
+import { Flip, Fade } from "react-awesome-reveal";
 
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -30,7 +29,7 @@ const Contact = () => {
                     width: "unset",
                 }}
             >
-                <Jump bottom>
+                <Fade bottom>
                     <Button
                         nameButton='Contact Me'
                         addStyleCustom={{
@@ -42,7 +41,7 @@ const Contact = () => {
                         backgroundColorCustom='#751FFF'
                         width='10%'
                     />
-                </Jump>
+                </Fade>
             </div>
             <div className='col-12'>
                 <Flip bottom>
@@ -59,7 +58,7 @@ const Contact = () => {
                 </Flip>
             </div>
             <div className='col-12 d-flex justify-content-center'>
-                <Jump bottom>
+                <Fade bottom>
                     <Link to='https://www.youtube.com/'>
                         <FaYoutubeSquare
                             style={{
@@ -67,8 +66,8 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Jump>
-                <Jump bottom delay={500}>
+                </Fade>
+                <Fade bottom delay={500}>
                     <Link to='https://www.tiktok.com/foryou?is_copy_url=1&is_from_webapp=v1'>
                         <SiTiktok
                             style={{
@@ -76,8 +75,8 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Jump>
-                <Jump bottom delay={1000}>
+                </Fade>
+                <Fade bottom delay={1000}>
                     <Link to='https://github.com/Tran-Huu-Tai-12-04-23'>
                         {" "}
                         <BsGithub
@@ -86,8 +85,8 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Jump>
-                <Jump bottom delay={1500}>
+                </Fade>
+                <Fade bottom delay={1500}>
                     <Link to='https://www.facebook.com/profile.php?id=100037828690010'>
                         <ImFacebook2
                             style={{
@@ -95,7 +94,7 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Jump>
+                </Fade>
             </div>
         </div>
     );

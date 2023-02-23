@@ -1,8 +1,7 @@
 import { useContext, useState } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
-import Flip from "react-reveal/Flip";
-import Fade from "react-reveal/Flip";
+import { Flip, Fade } from "react-awesome-reveal";
 import "./style.scss";
 
 import { ThemeApp } from "../../Utils/context";
