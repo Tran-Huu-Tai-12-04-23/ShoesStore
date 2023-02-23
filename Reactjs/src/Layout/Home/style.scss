@@ -8,10 +8,10 @@
 }
 .action_move_top {
     position: fixed;
-    bottom: 2.4rem;
-    right: 2.4rem;
-    height: 8rem;
-    width: 8rem;
+    bottom: 1rem;
+    right: 1rem;
+    height: 5rem;
+    width: 5rem;
     background-color: rgba(0, 0, 0, 0.5);
     border: 0.1rem solid #ffff;
     border-radius: 50%;
@@ -38,6 +38,7 @@
 
 // css about
 .wrapper_about_home {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +73,7 @@
         width: 18rem;
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             bottom: -1.2rem;
             left: 1.7rem;
@@ -104,15 +105,24 @@
         }
     }
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 10%;
         right: 10%;
-        width: 60%;
+        width: 80%;
         height: 40%;
         background-color: rgba(255, 255, 255, 0.07);
         border-radius: 60% 40% 64% 36% / 69% 41% 59% 31%;
         z-index: 0;
+        animation: slow 4s ease-in-out infinite alternate;
+    }
+    @keyframes slow {
+        0% {
+            transform: translateX(-5rem);
+        }
+        100% {
+            transform: translateX(5rem);
+        }
     }
 }
 
@@ -136,7 +146,6 @@
     // height: max-content;
     height: 50vh;
     width: 100%;
-    margin-top: 2.4rem;
     position: relative;
     transition: all 0.3s ease-in-out;
     & > div:nth-child(1) {
@@ -157,12 +166,16 @@
         }
         &::after {
             position: absolute;
-            content: '';
+            content: "";
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(0deg, rgba(57, 71, 187, 0.6) 20%, rgba(171, 80, 189, 0.2) 84%);
+            background: linear-gradient(
+                0deg,
+                rgba(57, 71, 187, 0.6) 20%,
+                rgba(171, 80, 189, 0.2) 84%
+            );
             display: none;
             animation: watchPoster 0.4s ease-in-out;
         }
@@ -214,13 +227,17 @@
                 }
                 .hover {
                     animation: watchPoster 0.4s ease-in-out;
-                    content: '';
+                    content: "";
                     position: absolute;
                     top: 0;
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background: linear-gradient(0deg, rgba(57, 71, 187, 0.6) 20%, rgba(171, 80, 189, 0.2) 84%);
+                    background: linear-gradient(
+                        0deg,
+                        rgba(57, 71, 187, 0.6) 20%,
+                        rgba(171, 80, 189, 0.2) 84%
+                    );
                     border-radius: calc(var(--primary_border_radius) * 10);
                     display: none;
                 }
@@ -282,7 +299,7 @@
                 color: #fff;
 
                 &::after {
-                    content: '';
+                    content: "";
                     position: absolute;
                     bottom: -0.6rem;
                     left: 0px;
@@ -347,7 +364,7 @@
         left: 50%;
     }
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 50%;
@@ -452,7 +469,7 @@ $text-color: mix(#000, $primary-color, 64%);
             &:before {
                 display: flex;
                 flex-shrink: 0;
-                content: '';
+                content: "";
                 background-color: #fff;
                 width: 1.5em;
                 height: 1.5em;
@@ -481,16 +498,30 @@ $text-color: mix(#000, $primary-color, 64%);
     &::-webkit-scrollbar-thumb {
         border-radius: 1rem;
         background-color: #fff;
-        background-image: -webkit-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+        background-image: -webkit-linear-gradient(
+            top,
+            #e4f5fc 0%,
+            #bfe8f9 50%,
+            #9fd8ef 51%,
+            #2ab0ed 100%
+        );
     }
 }
 @keyframes watchPoster {
     from {
         opacity: 0;
-        background: linear-gradient(0deg, rgba(57, 71, 187, 0.6) 0, rgba(171, 80, 189, 0.2) 20);
+        background: linear-gradient(
+            0deg,
+            rgba(57, 71, 187, 0.6) 0,
+            rgba(171, 80, 189, 0.2) 20
+        );
     }
     to {
         opacity: 1;
-        background: linear-gradient(0deg, rgba(57, 71, 187, 0.6) 20%, rgba(171, 80, 189, 0.2) 84%);
+        background: linear-gradient(
+            0deg,
+            rgba(57, 71, 187, 0.6) 20%,
+            rgba(171, 80, 189, 0.2) 84%
+        );
     }
 }

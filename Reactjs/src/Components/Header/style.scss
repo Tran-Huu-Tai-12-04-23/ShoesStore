@@ -60,7 +60,7 @@
         }
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             bottom: calc(var(--height_header) / 2 * -1);
             left: -10rem;
@@ -84,7 +84,7 @@
 .wrapper_store_item_cart {
     width: 100%;
     padding: 1.2rem;
-    height: 80%;
+    height: 70%;
     overflow-y: scroll;
 
     .item_cart_store {
@@ -111,7 +111,11 @@
     &::-webkit-scrollbar-thumb {
         border-radius: 1rem;
         background-color: #fff;
-        background-image: linear-gradient(0deg, rgba(169, 57, 187, 1) 20%, rgba(80, 81, 189, 1) 84%);
+        background-image: linear-gradient(
+            0deg,
+            rgba(169, 57, 187, 1) 20%,
+            rgba(80, 81, 189, 1) 84%
+        );
     }
     .info_item_cart {
         display: flex;

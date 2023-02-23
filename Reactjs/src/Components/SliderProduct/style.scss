@@ -15,6 +15,7 @@
     transition: 1s;
     display: none;
     transform: translate(50%, -50%);
+    z-index: 1;
     .tag_sale {
         position: absolute;
         top: 1rem;
@@ -28,7 +29,7 @@
         color: #fff;
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             bottom: -0.6rem;
             left: 0px;

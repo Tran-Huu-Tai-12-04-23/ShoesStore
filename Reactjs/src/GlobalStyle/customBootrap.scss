@@ -1,51 +1,51 @@
 .active_flex_left {
     display: flex !important;
-    animation: activeLeft .5s ease-in-out 1 forwards;
+    animation: activeLeft 0.6s linear 1 forwards;
     z-index: 1000;
 }
 .active_flex_right {
     display: flex !important;
-    animation: activeRight .5s ease-in-out 1 forwards;
+    animation: activeRight 0.6s linear 1 forwards;
     z-index: 1000;
 }
 .hidden_left {
     opacity: 0.2;
     display: flex !important;
     backdrop-filter: blur(20px);
-    right: 105%!important;
+    right: 105% !important;
 }
 .hidden_right {
     opacity: 0.2;
     backdrop-filter: blur(20px);
     display: flex !important;
-    right: -5%!important;
+    right: -5% !important;
 }
 @keyframes activeRight {
     0% {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-10%, -50%);
     }
     50% {
         opacity: 0.7;
-        transform: translate(-30%, -50%) scale(1.1);
+        transform: translate(20%, -50%);
     }
     100% {
         opacity: 1;
-        transform: translate(50%, -50%) scale(1.2);
+        transform: translate(50%, -50%);
     }
 }
 @keyframes activeLeft {
     0% {
         opacity: 0;
-        transform: translate(100%, -50%) scale(1);
+        transform: translate(100%, -50%);
     }
     50% {
         opacity: 0.7;
-        transform: translate(80%, -50%) scale(1.1);
+        transform: translate(80%, -50%);
     }
     100% {
         opacity: 1;
-        transform: translate(50%, -50%) scale(1.2);
+        transform: translate(50%, -50%);
     }
 }
 .hidden {
@@ -89,7 +89,7 @@
         position: absolute !important;
     }
     .w-md-100 {
-        width: 100%;
+        width: 100% !important;
     }
     .h-md-90 {
         height: 90vh;
@@ -116,6 +116,9 @@
     }
     .d-sm-none-custom {
         display: none;
+    }
+    .w-sm-100 {
+        width: 100% !important;
     }
 }
 

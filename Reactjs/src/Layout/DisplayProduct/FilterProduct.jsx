@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react';
-import { v4 as uuid } from 'uuid';
-import './style.scss';
+import { useContext, useState } from "react";
+import { v4 as uuid } from "uuid";
+import "./style.scss";
 
-import { ThemeApp } from '../../Utils/context';
-import Button from '../../Components/Button';
+import { ThemeApp } from "../../Utils/context";
+import Button from "../../Components/Button";
 
 const FilterProduct = ({
     typeShoes,
@@ -19,7 +19,7 @@ const FilterProduct = ({
     dataFilter,
     setDataFilter,
     setNumberProduct,
-    display = 'block',
+    display = "block",
     styleCustom,
     setShowFilter,
 }) => {
@@ -30,10 +30,10 @@ const FilterProduct = ({
                 <li
                     key={uuid()}
                     style={{
-                        color: it.id === type ? '#e90064' : theme.color,
-                        fontSize: '1.4rem',
+                        color: it.id === type ? "#e90064" : theme.color,
+                        fontSize: "1.4rem",
                         margin: 0,
-                        padding: '.4rem 1.2rem',
+                        padding: ".6rem 2.4rem",
                     }}
                     onClick={(e) => {
                         setType(it.id);
@@ -50,18 +50,24 @@ const FilterProduct = ({
                 <div
                     key={uuid()}
                     style={{
-                        width: '100%',
-                        fontSize: '1.4rem',
+                        width: "100%",
+                        fontSize: "1.4rem",
+                        borderRadius: "var(--primary_border_radius)",
                     }}
                 >
                     <Button
                         nameButton={it.type}
-                        width="100%"
+                        width='100%'
                         addStyleCustom={{
-                            borderRadius: 'var(--primary_border_radius)',
                             color: theme.color,
-                            justifyContent: 'flex-start',
-                            backgroundColor: rangePrice.type === it.type ? theme.secondBackgroundColor : 'unset',
+                            justifyContent: "flex-start",
+                            backgroundColor:
+                                rangePrice.type === it.type
+                                    ? theme.secondBackgroundColor
+                                    : "unset",
+                            padding: "1.2rem",
+                            borderRadius: "var(--primary_border_radius)",
+                            maxWidth: "calc(100% - 2.4rem)",
                         }}
                         action={(e) => setRangePrice(it)}
                     ></Button>
@@ -75,80 +81,94 @@ const FilterProduct = ({
             style={{
                 display: display,
                 ...styleCustom,
-                overflow: 'hidden',
+                overflow: "hidden",
             }}
         >
-            <ul className="name_type_shoes">{renderTypeShoes()}</ul>
+            <ul className='name_type_shoes '>{renderTypeShoes()}</ul>
             <div
-                className="wrapper_select_gender mb-2"
+                className='wrapper_select_gender mb-2'
                 style={{
-                    fontSize: '1.4rem',
+                    fontSize: "1.4rem",
+                    paddingLeft: "1.2rem",
                 }}
             >
                 <label>
                     <input
-                        type="radio"
-                        name="gender"
-                        value="Unisex"
+                        type='radio'
+                        name='gender'
+                        value='Unisex'
                         onChange={(e) => setGender(e.target.value)}
-                        checked={gender.toString().toLowerCase() === 'unisex' ? true : false}
+                        checked={
+                            gender.toString().toLowerCase() === "unisex"
+                                ? true
+                                : false
+                        }
                     />
                     <span>Unisex</span>
                 </label>
                 <label>
                     <input
-                        type="radio"
-                        name="gender"
-                        value="Men"
+                        type='radio'
+                        name='gender'
+                        value='Men'
                         onChange={(e) => setGender(e.target.value)}
-                        checked={gender.toString().toLowerCase() === 'men' ? true : false}
+                        checked={
+                            gender.toString().toLowerCase() === "men"
+                                ? true
+                                : false
+                        }
                     />
                     <span>Men</span>
                 </label>
                 <label>
                     <input
-                        type="radio"
-                        name="gender"
-                        value="Women"
+                        type='radio'
+                        name='gender'
+                        value='Women'
                         onChange={(e) => setGender(e.target.value)}
-                        checked={gender.toString().toLowerCase() === 'women' ? true : false}
+                        checked={
+                            gender.toString().toLowerCase() === "women"
+                                ? true
+                                : false
+                        }
                     />
                     <span>Women</span>
                 </label>
             </div>
-            <div className="wrapper_select_price">
+            <div className='wrapper_select_price'>
                 <h1
                     style={{
-                        marginLeft: '1.2rem',
-                        marginBottom: '1.2rem',
-                        margin: '1.2rem',
+                        marginBottom: "1.2rem",
+                        margin: "1.2rem",
+                        marginLeft: "0",
                     }}
                 >
                     Price
                 </h1>
                 <div
-                    className=" pb-2"
+                    className=' pb-2'
                     style={{
-                        width: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        flexDirection: 'column',
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flexDirection: "column",
+                        marginLeft: "1.2rem",
                     }}
                 >
                     {renderPrice()}
                 </div>
                 <Button
-                    nameButton="Apply"
-                    width="70%"
+                    nameButton='Apply'
+                    width='70%'
                     addStyleCustom={{
                         color: theme.color,
-                        margin: '0 auto',
-                        borderRadius: '3rem',
-                        marginBottom: '1.2',
+                        margin: "0 auto",
+                        borderRadius: "3rem",
+                        marginBottom: "1.2",
                         backgroundColor: theme.secondBackgroundColor,
                     }}
-                    height="3rem"
+                    height='3rem'
                     action={(e) => {
                         setDataFilter((prev) => {
                             return { gender, typeShoes: type, rangePrice };
