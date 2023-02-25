@@ -24,7 +24,7 @@ const Help = () => {
             <img src={helpImage}></img>
             <div>
                 <div>
-                    <Slide left>
+                    <Slide fraction={0} triggerOnce={true} direction='left'>
                         <h1
                             style={{
                                 color: "#fff",
@@ -33,13 +33,13 @@ const Help = () => {
                             Need Help? Check Out Our Help Center
                         </h1>
                     </Slide>
-                    <Slide bottom delay={500}>
+                    <Slide fraction={0} triggerOnce={true} direction='right'>
                         <p>
                             I'm a paragraph. Click here to add your own text and
                             edit me. Let your users get to know you.
                         </p>
                     </Slide>
-                    <Slide bottom delay={1000}>
+                    <Slide fraction={0} triggerOnce={true} direction='up'>
                         <Button
                             nameButton='Go To Help Center?'
                             backgroundColorCustom={"#751FFF"}

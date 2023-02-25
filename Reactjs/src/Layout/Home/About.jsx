@@ -109,7 +109,7 @@ const About = () => {
                         color: theme.color,
                     }}
                 >
-                    <Slide direction='left'>
+                    <Slide triggerOnce={true} direction='left'>
                         <Button
                             nameButton='ExClusive Collections'
                             width='unset'
@@ -176,7 +176,7 @@ const About = () => {
                         "--background_color": theme.secondBackgroundColor,
                     }}
                 >
-                    <Slide direction='right'>
+                    <Slide triggerOnce={true} direction='right'>
                         <lottie-player
                             autoplay
                             loop
@@ -192,7 +192,7 @@ const About = () => {
                         textAlign: "center",
                     }}
                 >
-                    <Slide direction='direction'>
+                    <Slide triggerOnce={true} direction='up'>
                         <div className='container'>
                             <div
                                 className='row'

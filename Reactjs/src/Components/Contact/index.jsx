@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { v4 as uuid } from "uuid";
-import { Flip, Fade } from "react-awesome-reveal";
+import { Zoom, Fade, Slide } from "react-awesome-reveal";
 
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -29,7 +29,7 @@ const Contact = () => {
                     width: "unset",
                 }}
             >
-                <Fade bottom>
+                <Fade direction='up' triggerOnce={true}>
                     <Button
                         nameButton='Contact Me'
                         addStyleCustom={{
@@ -44,21 +44,21 @@ const Contact = () => {
                 </Fade>
             </div>
             <div className='col-12'>
-                <Flip bottom>
+                <Slide triggerOnce={true} direction='up' delay={500}>
                     <div>
                         <span>Email : </span>
                         <span>Huutaitran201@gmail.com</span>
                     </div>
-                </Flip>
-                <Flip bottom>
+                </Slide>
+                <Slide direction='up' triggerOnce={true} delay={1000}>
                     <div>
                         <span>Phone Number : </span>
                         <span>0376100548</span>
                     </div>
-                </Flip>
+                </Slide>
             </div>
             <div className='col-12 d-flex justify-content-center'>
-                <Fade bottom>
+                <Zoom direction='up' triggerOnce={true}>
                     <Link to='https://www.youtube.com/'>
                         <FaYoutubeSquare
                             style={{
@@ -66,8 +66,8 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Fade>
-                <Fade bottom delay={500}>
+                </Zoom>
+                <Zoom direction='up' triggerOnce={true} delay={500}>
                     <Link to='https://www.tiktok.com/foryou?is_copy_url=1&is_from_webapp=v1'>
                         <SiTiktok
                             style={{
@@ -75,8 +75,8 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Fade>
-                <Fade bottom delay={1000}>
+                </Zoom>
+                <Zoom direction='up' triggerOnce={true} delay={1000}>
                     <Link to='https://github.com/Tran-Huu-Tai-12-04-23'>
                         {" "}
                         <BsGithub
@@ -85,8 +85,8 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Fade>
-                <Fade bottom delay={1500}>
+                </Zoom>
+                <Zoom direction='up' triggerOnce={true} delay={1500}>
                     <Link to='https://www.facebook.com/profile.php?id=100037828690010'>
                         <ImFacebook2
                             style={{
@@ -94,7 +94,7 @@ const Contact = () => {
                             }}
                         />
                     </Link>
-                </Fade>
+                </Zoom>
             </div>
         </div>
     );

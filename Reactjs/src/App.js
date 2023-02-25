@@ -20,9 +20,9 @@ function App() {
         window.matchMedia("(prefers-color-scheme: dark)").matches
             ? {
                   theme: true,
-                  backgroundColor: "#060930",
-                  secondBackgroundColor: "#333456",
-                  thirdBackgroundColor: "#595B83",
+                  backgroundColor: "#0f151a",
+                  secondBackgroundColor: "#2C3333",
+                  thirdBackgroundColor: "#576F72",
                   colorActive: "#6f2cf4",
                   button_primary: "#6f2cf4",
                   color: "#fff",
@@ -62,6 +62,12 @@ function App() {
         return () => {
             window.removeEventListener("load", handleOnload);
         };
+    }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoader(false);
+        }, 2000);
     }, []);
 
     return (

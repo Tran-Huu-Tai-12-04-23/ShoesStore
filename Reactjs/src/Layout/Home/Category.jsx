@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
-import { Flip, Fade } from "react-awesome-reveal";
+import { Slide, Fade } from "react-awesome-reveal";
 import "./style.scss";
 
 import { ThemeApp } from "../../Utils/context";
@@ -15,17 +15,20 @@ const Category = () => {
             linkImage:
                 "https://static.nike.com/a/images/f_auto/dpr_0.8,cs_srgb/w_1824,c_limit/20c78cca-5faf-4caf-9afe-7a2a1ccb9f05/men-s-shoes-clothing-accessories.jpg",
             linkTo: "/",
+            dire: "left",
         },
         {
             name: "Women",
             linkImage:
                 "https://static.nike.com/a/images/f_auto/dpr_0.8,cs_srgb/w_1824,c_limit/ad4c2b50-6a86-4f41-b719-67dbb6a14eca/women-s-shoes-clothing-accessories.jpg",
+            dire: "up",
             linkTo: "/",
         },
         {
             name: "Sales",
             linkImage:
                 "https://static.nike.com/a/images/f_auto/dpr_0.8,cs_srgb/w_1824,c_limit/5bc2d4fc-00ab-4a15-b383-88943b65b58d/running-shoe-finder.jpg",
+            dire: "right",
             linkTo: "/",
         },
     ];
@@ -34,7 +37,7 @@ const Category = () => {
         return categoryList.map((item) => {
             return (
                 <div className='item col-12 col-md-12 col-lg-4' key={uuid()}>
-                    <Fade left>
+                    <Fade triggerOnce={true} direction={item.dire}>
                         <div>
                             <img className='' src={item.linkImage} />
                             <div className='hover'></div>
@@ -70,7 +73,7 @@ const Category = () => {
                 paddingBottom: "10rem",
             }}
         >
-            <Flip bottom>
+            <Slide triggerOnce={true} direction='up'>
                 <h1
                     className='mb-5'
                     style={{
@@ -83,7 +86,7 @@ const Category = () => {
                 >
                     Shop By Category
                 </h1>
-            </Flip>
+            </Slide>
             <div className='row wrapper_slider_category'>
                 {renderCategory()}
             </div>

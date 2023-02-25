@@ -136,7 +136,7 @@ const SliderProduct = () => {
 
     return (
         <div className='wrapper_category_home' style={{}}>
-            <Slide bottom>
+            <Slide direction='up' triggerOnce={true}>
                 <div
                     className='container-fluid '
                     style={{

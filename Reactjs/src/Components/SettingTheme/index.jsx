@@ -22,8 +22,8 @@ const SettingTheme = ({ width = "6rem", height = "3.2rem" }) => {
                     setTheme({
                         theme: false,
                         backgroundColor: "#fff",
-                        secondBackgroundColor: "#DFDFDE",
-                        thirdBackgroundColor: "#F7F5F2",
+                        secondBackgroundColor: "#EFF5F5",
+                        thirdBackgroundColor: "#497174",
                         colorActive: "#6f2cf4",
                         button_primary: "#6f2cf4",
                         color: "#000",
@@ -31,9 +31,9 @@ const SettingTheme = ({ width = "6rem", height = "3.2rem" }) => {
                 } else {
                     setTheme({
                         theme: true,
-                        backgroundColor: "#060930",
-                        secondBackgroundColor: "#333456",
-                        thirdBackgroundColor: "#595B83",
+                        backgroundColor: "#0f151a",
+                        secondBackgroundColor: "#2C3333",
+                        thirdBackgroundColor: "#576F72",
                         colorActive: "#6f2cf4",
                         button_primary: "#6f2cf4",
                         color: "#fff",

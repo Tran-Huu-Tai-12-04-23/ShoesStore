@@ -21,7 +21,8 @@ const Poster = () => {
         >
             <div className='col-lg-6 col-md-12'>
                 <Slide
-                    direction='bottom'
+                    triggerOnce={true}
+                    direction='left'
                     style={{
                         height: "100%",
                         width: "100%%",
@@ -65,6 +66,7 @@ const Poster = () => {
                 }}
             >
                 <Slide
+                    triggerOnce={true}
                     direction='right'
                     style={{
                         position: "absolute",
@@ -112,7 +114,7 @@ const Poster = () => {
                 }}
             >
                 <Slide
-                    delay={500}
+                    triggerOnce={true}
                     direction='right'
                     style={{
                         height: "100%",
