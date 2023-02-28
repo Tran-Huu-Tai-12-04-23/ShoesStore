@@ -56,7 +56,7 @@ function App() {
         const handleOnload = () => {
             setTimeout(() => {
                 setLoader(false);
-            }, 2000);
+            }, 1000);
         };
         window.addEventListener("load", handleOnload);
         return () => {

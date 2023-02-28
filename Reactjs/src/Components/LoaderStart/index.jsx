@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeApp } from "../../Utils/context";
-import LottiePlayer from "@lottiefiles/lottie-player";
+import "./style.scss";
 
 const LoaderStart = ({ show = "false" }) => {
     const [theme, setTheme] = useContext(ThemeApp);
@@ -16,19 +16,7 @@ const LoaderStart = ({ show = "false" }) => {
                 backgroundColor: theme.backgroundColor,
             }}
         >
-            <div
-                style={{
-                    width: "20%",
-                    height: "20%",
-                }}
-            >
-                <lottie-player
-                    autoplay
-                    loop
-                    mode='normal'
-                    src='https://assets5.lottiefiles.com/packages/lf20_yGAvcNz3us.json'
-                ></lottie-player>
-            </div>
+            <div class='dashed-loading'></div>
         </div>
     );
 };
